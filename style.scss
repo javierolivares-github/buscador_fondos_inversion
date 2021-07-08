@@ -1,0 +1,16 @@
+$colorPrimario: #0984E3;
+$colorSecundario: #2ecc71;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: $colorPrimario;
+}
