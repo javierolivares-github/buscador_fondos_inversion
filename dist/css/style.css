@@ -38,8 +38,7 @@ hr {
   font-weight: 700;
   letter-spacing: 2px; }
 
-.btn:hover,
-.btn:active {
+.btn:hover {
   background-color: #00cec9;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;

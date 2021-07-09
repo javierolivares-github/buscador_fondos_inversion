@@ -49,8 +49,7 @@ hr {
   letter-spacing: 2px;
 }
 
-.btn:hover,
-.btn:active {
+.btn:hover {
   background-color: $colorPrimarioHover;
   transition: transform 0.2s;
 }
