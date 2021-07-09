@@ -39,7 +39,7 @@ hr {
   margin-top: 2rem;
   border-radius: 15px;
 
-  h2 {
+  .perfilRiesgo__title {
     font-size: 1.125rem;
     color: #1E1A33;
   }
@@ -69,7 +69,7 @@ hr {
   margin-top: 2rem;
   border-radius: 15px;
 
-  h2 {
+  .plazoInversion__title {
     font-size: 1.125rem;
     color: #1E1A33;
   }
@@ -90,6 +90,31 @@ hr {
       align-items: center;
       column-gap: 8.5px;
     }
+  }
+}
+
+.fondos {
+  margin-top: 3rem;
+
+  .fondos__title {
+    font-size: 1.375rem;
+    font-weight:700;
+    color: $colorPrimario;
+  }
+
+  .fondo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 18px 0;
+    background-color: $gris;
+    border-radius: 15px;
+    margin-top: 1rem;
   }
 }
 

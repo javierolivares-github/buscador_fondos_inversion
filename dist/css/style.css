@@ -29,7 +29,7 @@ hr {
   background-color: #F3F3F3;
   margin-top: 2rem;
   border-radius: 15px; }
-  .perfilRiesgo h2 {
+  .perfilRiesgo .perfilRiesgo__title {
     font-size: 1.125rem;
     color: #1E1A33; }
   .perfilRiesgo p {
@@ -57,7 +57,7 @@ hr {
   background-color: #F3F3F3;
   margin-top: 2rem;
   border-radius: 15px; }
-  .plazoInversion h2 {
+  .plazoInversion .plazoInversion__title {
     font-size: 1.125rem;
     color: #1E1A33; }
   .plazoInversion p {
@@ -79,4 +79,30 @@ hr {
             align-items: center;
     -webkit-column-gap: 8.5px;
             column-gap: 8.5px; }
+
+.fondos {
+  margin-top: 3rem; }
+  .fondos .fondos__title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #0984E3; }
+  .fondos .fondo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 18px 0;
+    background-color: #F3F3F3;
+    border-radius: 15px;
+    margin-top: 1rem; }
 /*# sourceMappingURL=style.css.map */
