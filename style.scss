@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 $colorPrimario: #0984E3;
+$colorPrimarioHover: #00cec9;
 $colorSecundario: #2ecc71;
 $gris: #F3F3F3;
 
@@ -46,6 +47,17 @@ hr {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: $colorPrimarioHover;
+  transition: transform 0.2s;
+}
+
+.btn:active {
+  outline: none;
+  transform: scale(.97);
 }
 
 .contenedorPerfilYPlazo {

@@ -38,6 +38,19 @@ hr {
   font-weight: 700;
   letter-spacing: 2px; }
 
+.btn:hover,
+.btn:active {
+  background-color: #00cec9;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s; }
+
+.btn:active {
+  outline: none;
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97); }
+
 .contenedorPerfilYPlazo .perfilRiesgo {
   padding: 20px;
   background-color: #F3F3F3;
