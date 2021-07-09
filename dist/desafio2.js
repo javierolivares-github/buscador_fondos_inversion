@@ -62,7 +62,7 @@ console.log(plazoSeleccionado);
 
 // FUNCIÓN 1
 function crearUI (fondo, plazo) {
-  console.log('UI para ' + fondo + ' ' + plazo);
+  console.log('UI PARA ' + fondo + ' ' + plazo);
 }
 
 // INICIALIZACION
