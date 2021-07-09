@@ -102,19 +102,43 @@ hr {
     color: $colorPrimario;
   }
 
-  .fondo {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 18px 0;
-    background-color: $gris;
-    border-radius: 15px;
-    margin-top: 1rem;
+  .contenedorFondos {
+    margin-top: 2rem;
+
+    .fondo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 18px 0;
+      background-color: $gris;
+      border-radius: 15px;
+      margin-top: 1rem;
+    }
+  }
+}
+
+// TABLET
+@media (min-width:600px) {
+  .contenedorFondos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 20px;
+  }
+}
+
+// PC
+@media (min-width:1024px) {
+  .contenedorFondos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 20px;
   }
 }
 
