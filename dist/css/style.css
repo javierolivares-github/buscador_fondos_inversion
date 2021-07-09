@@ -24,19 +24,33 @@ h1 {
 hr {
   margin-top: 2rem; }
 
-.perfilRiesgo {
+.btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 16px;
+  width: 100%;
+  border-radius: 15px;
+  border: none;
+  text-align: center;
+  background-color: #0984E3;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px; }
+
+.contenedorPerfilYPlazo .perfilRiesgo {
   padding: 20px;
   background-color: #F3F3F3;
   margin-top: 2rem;
   border-radius: 15px; }
-  .perfilRiesgo .perfilRiesgo__title {
+  .contenedorPerfilYPlazo .perfilRiesgo .perfilRiesgo__title {
     font-size: 1.125rem;
     color: #1E1A33; }
-  .perfilRiesgo p {
+  .contenedorPerfilYPlazo .perfilRiesgo p {
     font-size: 0.75rem;
     margin: 1rem 0 2rem 0;
     color: #6A6680; }
-  .perfilRiesgo form .form-group {
+  .contenedorPerfilYPlazo .perfilRiesgo form .form-group {
     margin-top: 1rem;
     font-size: 0.75rem;
     color: #1E1A33;
@@ -52,19 +66,19 @@ hr {
     -webkit-column-gap: 8.5px;
             column-gap: 8.5px; }
 
-.plazoInversion {
+.contenedorPerfilYPlazo .plazoInversion {
   padding: 20px;
   background-color: #F3F3F3;
   margin-top: 2rem;
   border-radius: 15px; }
-  .plazoInversion .plazoInversion__title {
+  .contenedorPerfilYPlazo .plazoInversion .plazoInversion__title {
     font-size: 1.125rem;
     color: #1E1A33; }
-  .plazoInversion p {
+  .contenedorPerfilYPlazo .plazoInversion p {
     font-size: 0.75rem;
     margin: 1rem 0 2rem 0;
     color: #6A6680; }
-  .plazoInversion form .form-group {
+  .contenedorPerfilYPlazo .plazoInversion form .form-group {
     margin-top: 1rem;
     font-size: 0.75rem;
     color: #1E1A33;
@@ -125,6 +139,15 @@ hr {
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    -webkit-column-gap: 1.25rem;
+            column-gap: 1.25rem; }
+  .contenedorPerfilYPlazo {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
     -webkit-column-gap: 1.25rem;

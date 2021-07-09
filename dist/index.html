@@ -8,47 +8,52 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <section class="perfiles contenedor">
+  <section class="contenedor">
     <h1>Buscador de fondos de inversión</h1>
     <hr>
 
-    <div class="perfilRiesgo">
-      <h2 class="perfilRiesgo__title">¿Con qué perfil de riesgo te identificas?</h2>
-      <form>
-        <p>Selecciona tu opción</p>
-        <div class="form-group">
-          <input type="radio" id="conservador" value="conservador" name="perfil">
-          <label for="conservador">CONSERVADOR</label>
-        </div>
-        <div class="form-group">
-          <input type="radio" id="moderado" value="moderado" name="perfil">
-          <label for="moderado">MODERADO</label>
-        </div>
-        <div class="form-group">
-          <input type="radio" id="crecimiento" value="crecimiento" name="perfil">
-          <label for="crecimiento">CRECIMIENTO</label>
-        </div>
-      </form>
+    <div class="contenedorPerfilYPlazo">
+      <div class="perfilRiesgo">
+        <h2 class="perfilRiesgo__title">¿Con qué perfil de riesgo te identificas?</h2>
+        <form>
+          <p>Selecciona tu opción</p>
+          <div class="form-group">
+            <input type="radio" id="conservador" value="conservador" name="perfil">
+            <label for="conservador">CONSERVADOR</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="moderado" value="moderado" name="perfil">
+            <label for="moderado">MODERADO</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="crecimiento" value="crecimiento" name="perfil">
+            <label for="crecimiento">CRECIMIENTO</label>
+          </div>
+        </form>
+      </div>
+
+      <div class="plazoInversion">
+        <h2 class="plazoInversion__title">¿Por cuánto tiempo quieres invertir?</h2>
+        <form>
+          <p>Selecciona tu opción</p>
+          <div class="form-group">
+            <input type="radio" id="corto" value="corto" name="plazo">
+            <label for="corto">0-1 AÑO</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="mediano" value="mediano" name="plazo">
+            <label for="mediano">1-3 AÑOS</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="largo" value="largo" name="plazo">
+            <label for="largo">3 + AÑOS</label>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <div class="plazoInversion">
-      <h2 class="plazoInversion__title">¿Por cuánto tiempo quieres invertir?</h2>
-      <form>
-        <p>Selecciona tu opción</p>
-        <div class="form-group">
-          <input type="radio" id="corto" value="corto" name="plazo">
-          <label for="corto">0-1 AÑO</label>
-        </div>
-        <div class="form-group">
-          <input type="radio" id="mediano" value="mediano" name="plazo">
-          <label for="mediano">1-3 AÑOS</label>
-        </div>
-        <div class="form-group">
-          <input type="radio" id="largo" value="largo" name="plazo">
-          <label for="largo">3 + AÑOS</label>
-        </div>
-      </form>
-    </div>
+    <button class="btn">BUSCAR</button>
+
 
     <section class="fondos">
       <h2 class="fondos__title">Fondos de Inversión según TU elección</h2>

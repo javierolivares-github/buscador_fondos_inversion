@@ -33,65 +33,83 @@ hr {
   margin-top: 2rem;
 }
 
-.perfilRiesgo {
-  padding: 20px;
-  background-color: $gris;
+.btn {
   margin-top: 2rem;
+  display: inline-block;
+  padding: 16px;
+  width: 100%;
   border-radius: 15px;
+  border: none;
+  text-align: center;
+  background-color: $colorPrimario;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 
-  .perfilRiesgo__title {
-    font-size: 1.125rem;
-    color: #1E1A33;
-  }
-
-  p {
-    font-size: 0.75rem;
-    margin: 1rem 0 2rem 0;
-    color: #6A6680;
-  }
-
-  form {
-    .form-group {
-      margin-top: 1rem;
-      font-size: 0.75rem;
+.contenedorPerfilYPlazo {
+  .perfilRiesgo {
+    padding: 20px;
+    background-color: $gris;
+    margin-top: 2rem;
+    border-radius: 15px;
+  
+    .perfilRiesgo__title {
+      font-size: 1.125rem;
       color: #1E1A33;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      column-gap: 8.5px;
+    }
+  
+    p {
+      font-size: 0.75rem;
+      margin: 1rem 0 2rem 0;
+      color: #6A6680;
+    }
+  
+    form {
+      .form-group {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: #1E1A33;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 8.5px;
+      }
+    }
+  }
+
+  .plazoInversion {
+    padding: 20px;
+    background-color: $gris;
+    margin-top: 2rem;
+    border-radius: 15px;
+  
+    .plazoInversion__title {
+      font-size: 1.125rem;
+      color: #1E1A33;
+    }
+  
+    p {
+      font-size: 0.75rem;
+      margin: 1rem 0 2rem 0;
+      color: #6A6680;
+    }
+  
+    form {
+      .form-group {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: #1E1A33;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 8.5px;
+      }
     }
   }
 }
 
-.plazoInversion {
-  padding: 20px;
-  background-color: $gris;
-  margin-top: 2rem;
-  border-radius: 15px;
-
-  .plazoInversion__title {
-    font-size: 1.125rem;
-    color: #1E1A33;
-  }
-
-  p {
-    font-size: 0.75rem;
-    margin: 1rem 0 2rem 0;
-    color: #6A6680;
-  }
-
-  form {
-    .form-group {
-      margin-top: 1rem;
-      font-size: 0.75rem;
-      color: #1E1A33;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      column-gap: 8.5px;
-    }
-  }
-}
 
 .fondos {
   margin-top: 3rem;
@@ -137,6 +155,13 @@ hr {
   .contenedorFondos {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 1.25rem;
+  }
+
+  .contenedorPerfilYPlazo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 1.25rem;
   }
