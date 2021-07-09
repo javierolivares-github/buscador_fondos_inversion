@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 $colorPrimario: #0984E3;
 $colorSecundario: #2ecc71;
+$gris: #F3F3F3;
 
 * {
   padding: 0;
@@ -8,9 +12,48 @@ $colorSecundario: #2ecc71;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.contenedor {
+  padding: 0 20px;
+  margin: auto;
+  max-width: 1140px;
 }
 
 h1 {
+  font-size: 1.875rem;
+  line-height: 2.1rem;
   color: $colorPrimario;
+  margin-top: 2rem;
 }
+
+hr {
+  margin-top: 2rem;
+}
+
+.perfilRiesgo {
+  padding: 20px;
+  background-color: $gris;
+  margin-top: 2rem;
+  border-radius: 15px;
+
+  h2 {
+    font-size: 1.125rem;
+    color: #1E1A33;
+  }
+
+  p {
+    font-size: 0.75rem;
+    margin: 1rem 0 2rem 0;
+    color: #6A6680;
+  }
+
+  .form-group {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #1E1A33;
+  }
+}
+
