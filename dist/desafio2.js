@@ -1,5 +1,4 @@
-// CONSTANTESS
-
+// CONSTANTES
 const conservador = 'conservador';
 const moderado = 'moderado';
 const crecimiento = 'crecimiento';
@@ -7,6 +6,7 @@ const crecimiento = 'crecimiento';
 const cortoPlazo = 'corto';
 const medianoPlazo = 'mediano';
 const largoPlazo = 'largo';
+
 let fondoSeleccionado = '';
 let plazoSeleccionado = '';
 
