@@ -18,7 +18,7 @@ body {
 h1 {
   font-size: 1.875rem;
   line-height: 2.1rem;
-  color: #0984E3;
+  color: #0984e3;
   margin-top: 2rem; }
 
 hr {
@@ -32,7 +32,7 @@ hr {
   border-radius: 15px;
   border: none;
   text-align: center;
-  background-color: #0984E3;
+  background-color: #0984e3;
   color: #fff;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -43,10 +43,10 @@ hr {
   transition: transform 0.2s, -webkit-transform 0.2s; }
 
 .btn:active {
-  background-color: #00cec9;
+  background-color: #74b9ff;
   outline: none;
-  -webkit-transform: scale(0.97);
-          transform: scale(0.97); }
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99); }
 
 .contenedorPerfilYPlazo .perfilRiesgo {
   padding: 20px;
@@ -109,7 +109,7 @@ hr {
   .fondos .fondos__title {
     font-size: 1.375rem;
     font-weight: 700;
-    color: #0984E3; }
+    color: #0984e3; }
   .fondos .contenedorFondos {
     margin-top: 2rem; }
     .fondos .contenedorFondos .fondo {
@@ -163,5 +163,5 @@ hr {
     -webkit-column-gap: 1.25rem;
             column-gap: 1.25rem; }
   .btn:hover {
-    background-color: #00cec9; } }
+    background-color: #74b9ff; } }
 /*# sourceMappingURL=style.css.map */

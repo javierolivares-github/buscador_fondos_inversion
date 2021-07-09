@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-$colorPrimario: #0984E3;
-$colorPrimarioHover: #00cec9;
+$colorPrimario: #0984e3;
+$colorPrimarioHover: #74b9ff;
 $colorSecundario: #2ecc71;
 $gris: #F3F3F3;
 
@@ -53,7 +53,7 @@ hr {
 .btn:active {
   background-color: $colorPrimarioHover;
   outline: none;
-  transform: scale(.97);
+  transform: scale(.99);
 }
 
 .contenedorPerfilYPlazo {
