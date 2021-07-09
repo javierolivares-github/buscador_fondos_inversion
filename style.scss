@@ -50,10 +50,46 @@ hr {
     color: #6A6680;
   }
 
-  .form-group {
-    margin-top: 1rem;
-    font-size: 0.75rem;
+  form {
+    .form-group {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: #1E1A33;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 8.5px;
+    }
+  }
+}
+
+.plazoInversion {
+  padding: 20px;
+  background-color: $gris;
+  margin-top: 2rem;
+  border-radius: 15px;
+
+  h2 {
+    font-size: 1.125rem;
     color: #1E1A33;
+  }
+
+  p {
+    font-size: 0.75rem;
+    margin: 1rem 0 2rem 0;
+    color: #6A6680;
+  }
+
+  form {
+    .form-group {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: #1E1A33;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 8.5px;
+    }
   }
 }
 
