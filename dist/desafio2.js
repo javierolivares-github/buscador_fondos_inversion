@@ -1,76 +1,205 @@
-// CONSTANTES
-const conservador = 'conservador';
-const moderado = 'moderado';
-const crecimiento = 'crecimiento';
+// Función constructora de objetos
+function FondoModelo (nombre, moneda, perfil, plazoRecomendado) {
+  this.nombre = nombre;
+  this.moneda = moneda;
+  this.perfil = perfil;
+  this.plazoRecomendado = plazoRecomendado;
+  this.obtenerInfo = function () {
+    console.log(
+      "El objetivo del Fondo " + this.nombre + " es canalizar el ahorro de las personas naturales y jurídicas, para maximizar el retorno de la inversión en los instrumentos indicados en la política de inversión del Fondo." 
+      + " La moneda en la cuál se tranza este Fondo es " + this.moneda + "."
+      + " Este Fondo esta recomendado para personas con un perfil de inversión " + this.perfil + "."
+      + " El plazo recomendable para este Fondo es de al menos " + this.plazoRecomendado + " día(s)."
+    )
+  }
+}
 
-const cortoPlazo = 'corto';
-const medianoPlazo = 'mediano';
-const largoPlazo = 'largo';
+// Objetos
+const fondo1 = new FondoModelo("LarrainVial Cash", "Pesos", "Conservador", 1);
+const fondo2 = new FondoModelo("LarrainVial Ahorro Dolar", "Dolar", "Moderado", 90);
+const fondo3 = new FondoModelo("LarrainVial Ahorro Plazo", "Pesos", "Conservador", 30);
+const fondo4 = new FondoModelo("LarrainVial Ahorro Capital", "Pesos", "Conservador", 90);
+const fondo5 = new FondoModelo("LarrainVial Ahorro Corporativo", "Pesos", "Moderado", 365);
+const fondo6 = new FondoModelo("LarrainVial Ahorro Estrategico", "Pesos", "Conservador", 365);
+const fondo7 = new FondoModelo("LarrainVial Ahorro Dinamico", "Pesos", "Moderado", 365);
+const fondo8 = new FondoModelo("LarrainVial Defensiva Dolar", "Dolar", "Moderado", 365);
+const fondo9 = new FondoModelo("LarrainVial Bonos Latam", "Dolar", "Moderado", 365);
+const fondo10 = new FondoModelo("LarrainVial Baleanceado Conservador", "Pesos", "Conservador", 365);
+const fondo11 = new FondoModelo("LarrainVial Baleanceado Moderado", "Pesos", "Moderado", 365);
+const fondo12 = new FondoModelo("LarrainVial Baleanceado Crecimiento", "Pesos", "Agresivo", 365);
+const fondo13 = new FondoModelo("LarrainVial Dinamico Agresivo", "Pesos", "Agresivo", 1095);
+const fondo14 = new FondoModelo("LarrainVial Dinamico Balanceado", "Pesos", "Moderado", 365);
+const fondo15 = new FondoModelo("LarrainVial Dinamico Conservador", "Pesos", "Conservador", 180);
+const fondo16 = new FondoModelo("LarrainVial Dinamico Crecimiento", "Pesos", "Agresivo", 730);
+const fondo17 = new FondoModelo("LarrainVial Dinamico Moderado", "Pesos", "Moderado", 270);
+const fondo18 = new FondoModelo("LarrainVial Portafolio Lider", "Pesos", "Moderado", 365);
+const fondo19 = new FondoModelo("LarrainVial Protección", "Pesos", "Moderado", 365);
+const fondo20 = new FondoModelo("LarrainVial Estados Unidos", "Dolar", "Agresivo", 730);
+const fondo21 = new FondoModelo("LarrainVial Europa", "Dolar", "Agresivo", 1095);
+const fondo22 = new FondoModelo("LarrainVial Asia", "Dolar", "Agresivo", 730);
+const fondo23 = new FondoModelo("LarrainVial Latinoamericano", "Dolar", "Agresivo", 1095);
+const fondo24 = new FondoModelo("LarrainVial Enfoque", "Pesos", "Agresivo", 730);
 
-let fondoSeleccionado = '';
-let plazoSeleccionado = '';
-
-// ENTRADA 1
-let entrada1 = prompt(`Seleccione el tipo de fondo (${conservador}, ${moderado}, ${crecimiento})`);
+// Arreglo
+const fondos = [fondo1, fondo2, fondo3, fondo4, fondo5, fondo6, fondo7, fondo8, fondo9, fondo10, fondo11, fondo12, fondo13, fondo14, fondo15, fondo16, fondo17, fondo18, fondo19, fondo20, fondo21, fondo22, fondo23, fondo24];
 
 
-// ENTRADA 2
-let entrada2 = prompt(`Seleccione el plazo (${cortoPlazo}, ${medianoPlazo}, ${largoPlazo})`);
-
-
-
-// SWITCH 1
-switch(entrada1){
-  case "conservador":
-    fondoSeleccionado = 'conservador';
-    alert('El tipo de fondo seleccionado es conservador');
-    break;
-  case "moderado":
-    fondoSeleccionado = 'moderado';
-    alert('El tipo de fondo seleccionado es moderado');
-    break;
-  case "crecimiento":
-    fondoSeleccionado = 'crecimiento';
-    alert('El tipo de fondo seleccionado es crecimiento');
-    break;
-  default:
-    entrada1 = prompt(`Seleccione el tipo de fondo (${conservador}, ${moderado}, ${crecimiento})`);
+// Función obtener todos los fondos
+function obtenerNombreTodosLosFondos () {
+  fondos.forEach(fondo => console.log(fondo.nombre));
 }
 
 
-// SWITCH 2
-switch(entrada2){
-  case "corto":
-    plazoSeleccionado = 'corto';
-    alert('El plazo de la inversión seleccionado es corto');
-    break;
-  case "mediano":
-    plazoSeleccionado = 'mediano';
-    alert('El plazo de la inversión seleccionado es mediano');
-    break;
-  case "largo":
-    plazoSeleccionado = 'largo';
-    alert('El plazo de la inversión seleccionado es largo');
-    break;
-  default:
-    entrada2 = prompt(`Seleccione el plazo (${cortoPlazo}, ${medianoPlazo}, ${largoPlazo})`);
+// Función obtener los fondos con perfil Conservador y un plazo menor o igual a 1 año
+function obtenerFondosConservadorMenorIgual1Año() {
+  // Filtro
+  let fondosConservadorMenorIgual1Año = fondos
+    .filter(fondo => fondo.perfil === "Conservador")
+    .filter(fondo => fondo.plazoRecomendado <= 365);
+
+  // Salida
+  fondosConservadorMenorIgual1Año.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
 }
 
-// COMPROBACION CONSOLA
-console.log(fondoSeleccionado);
-console.log(plazoSeleccionado);
+// Función obtener los fondos con perfil Conservador y un plazo  mayores a 1 y menores a 3 años
+function obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años() {
+  // Filtro
+  let fondosConservadorMayorIgual1AñoMenorIgual3Años = fondos
+    .filter(fondo => fondo.perfil === "Conservador")
+    .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
 
-// FUNCIÓN 1
-function crearUI (fondo, plazo) {
-  console.log('UI PARA ' + fondo + ' ' + plazo);
+  // Salida
+  fondosConservadorMayorIgual1AñoMenorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
 }
 
-// INICIALIZACION
-crearUI(fondoSeleccionado, plazoSeleccionado);
+// Función obtener los fondos con perfil Conservador y un plazo mayor o igual a 3 años
+function obtenerfondosConservadorMayorIgual3Años() {
+  // Filtro
+  let fondosConservadorMayorIgual3Años = fondos
+    .filter(fondo => fondo.perfil === "Conservador")
+    .filter(fondo => fondo.plazoRecomendado >= 1095);
+
+  // Salida
+  fondosConservadorMayorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+}
+
+// Función obtener los fondos con perfil Moderado y un plazo Menor o Igual a 1 año
+function obtenerFondosModeradoMenorIgual1Año() {
+  // Filtro
+  let fondosModeradoMenorIgual1Año = fondos
+    .filter(fondo => fondo.perfil === "Moderado")
+    .filter(fondo => fondo.plazoRecomendado <= 365);
+
+  // Salida
+  fondosModeradoMenorIgual1Año.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+}
+
+// Función obtener los fondos con perfil Moderado y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
+function obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años() {
+  // Filtro
+  let fondosModeradoMayorIgual1AñoMenorIgual3Años = fondos
+    .filter(fondo => fondo.perfil === "Moderado")
+    .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
+
+  // Salida
+  fondosModeradoMayorIgual1AñoMenorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+}
+
+// Función obtener los fondos con perfil Moderado y un plazo mayor o igual a 3 años
+function obtenerfondosModeradoMayorIgual3Años() {
+  // Filtro
+  let fondosModeradoMayorIgual3Años = fondos
+    .filter(fondo => fondo.perfil === "Moderado")
+    .filter(fondo => fondo.plazoRecomendado >= 1095);
+
+  // Salida
+  fondosModeradoMayorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+}
+
+// Función obtener los fondos con perfil Agresivo y un plazo Menor o Igual a 1 año
+function obtenerFondosAgresivoMenorIgual1Año() {
+  // Filtro
+  let fondosAgresivoMenorIgual1Año = fondos
+    .filter(fondo => fondo.perfil === "Agresivo")
+    .filter(fondo => fondo.plazoRecomendado <= 365);
+
+  // Salida
+  fondosAgresivoMenorIgual1Año.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+}
+
+// Función obtener los fondos con perfil Agresivo y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
+function obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años() {
+  // Filtro
+  let fondosAgresivoMayorIgual1AñoMenorIgual3Años = fondos
+    .filter(fondo => fondo.perfil === "Agresivo")
+    .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
+
+  // Salida
+  fondosAgresivoMayorIgual1AñoMenorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+}
+
+// Función obtener los fondos con perfil Moderado y un plazo mayor o igual a 3 años
+function obtenerfondosAgresivoMayorIgual3Años() {
+  // Filtro
+  let fondosAgresivoMayorIgual3Años = fondos
+    .filter(fondo => fondo.perfil === "Agresivo")
+    .filter(fondo => fondo.plazoRecomendado >= 1095);
+
+  // Salida
+  fondosAgresivoMayorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+}
 
 
 
 
+// Entradas (La idea luego es que las entradas provengan desde los input tipo radio que usa el cliente)
+let entrada1 = prompt(`¿Con qué perfil de riesgo te identificas? (conservador, moderado o agresivo)`);
+let entrada2 = prompt(`¿Por cuánto tiempo quieres invertir? (corto, mediano o largo)`);
+
+
+// Estructuras If (La idea luego es que la estructua pueda crear una salida UI)
+if (entrada1 === "conservador" && entrada2 === "corto") {
+  obtenerFondosConservadorMenorIgual1Año();
+}
+if (entrada1 === "conservador" && entrada2 === "mediano") {
+  obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años();
+}
+if (entrada1 === "conservador" && entrada2 === "largo") {
+  obtenerfondosConservadorMayorIgual3Años();
+}
+if (entrada1 === "moderado" && entrada2 === "corto") {
+  obtenerFondosModeradoMenorIgual1Año();
+}
+if (entrada1 === "moderado" && entrada2 === "mediano") {
+  obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años();
+}
+if (entrada1 === "moderado" && entrada2 === "largo") {
+  obtenerfondosModeradoMayorIgual3Años();
+}
+if (entrada1 === "agresivo" && entrada2 === "corto") {
+  obtenerFondosAgresivoMenorIgual1Año();
+}
+if (entrada1 === "agresivo" && entrada2 === "mediano") {
+  obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años();
+}
+if (entrada1 === "agresivo" && entrada2 === "largo") {
+  obtenerfondosAgresivoMayorIgual3Años();
+}
+
+
+
+// INICIALIZACION DE FUNCIONES DE PRUEBA
+// obtenerNombreTodosLosFondos();
+// fondo21.obtenerInfo();
+// obtenerFondosConservadorMenorIgual1Año();
+// obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años();
+// obtenerfondosConservadorMayorIgual3Años();
+// obtenerFondosModeradoMenorIgual1Año();
+// obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años();
+// obtenerfondosModeradoMayorIgual3Años();
+// obtenerFondosAgresivoMenorIgual1Año();
+// obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años();
+// obtenerfondosAgresivoMayorIgual3Años();
 
 
 
