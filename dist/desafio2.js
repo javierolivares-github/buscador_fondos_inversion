@@ -150,8 +150,6 @@ function obtenerfondosAgresivoMayorIgual3Años() {
 }
 
 
-
-
 // Entradas (La idea luego es que las entradas provengan desde los input tipo radio que usa el cliente)
 let entrada1 = prompt(`¿Con qué perfil de riesgo te identificas? (conservador, moderado o agresivo)`);
 let entrada2 = prompt(`¿Por cuánto tiempo quieres invertir? (corto, mediano o largo)`);
@@ -188,7 +186,7 @@ if (entrada1 === "agresivo" && entrada2 === "largo") {
 
 
 
-// INICIALIZACION DE FUNCIONES DE PRUEBA
+// INICIALIZACION DE FUNCIONES PARA PRUEBA
 // obtenerNombreTodosLosFondos();
 // fondo21.obtenerInfo();
 // obtenerFondosConservadorMenorIgual1Año();
