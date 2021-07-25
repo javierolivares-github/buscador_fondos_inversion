@@ -46,7 +46,16 @@ const fondos = [fondo1, fondo2, fondo3, fondo4, fondo5, fondo6, fondo7, fondo8, 
 
 // Función obtener todos los fondos
 function obtenerNombreTodosLosFondos () {
-  fondos.forEach(fondo => console.log(fondo.nombre));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondos.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
 
 
@@ -57,9 +66,18 @@ function obtenerFondosConservadorMenorIgual1Año() {
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado <= 365);
 
-  // Salida
-  fondosConservadorMenorIgual1Año.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosConservadorMenorIgual1Año.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
+
 
 // Función obtener los fondos con perfil Conservador y un plazo  mayores a 1 y menores a 3 años
 function obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años() {
@@ -68,9 +86,18 @@ function obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años() {
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
 
-  // Salida
-  fondosConservadorMayorIgual1AñoMenorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosConservadorMayorIgual1AñoMenorIgual3Años.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
+
 
 // Función obtener los fondos con perfil Conservador y un plazo mayor o igual a 3 años
 function obtenerfondosConservadorMayorIgual3Años() {
@@ -79,9 +106,18 @@ function obtenerfondosConservadorMayorIgual3Años() {
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
 
-  // Salida
-  fondosConservadorMayorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosConservadorMayorIgual3Años.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
+
 
 // Función obtener los fondos con perfil Moderado y un plazo Menor o Igual a 1 año
 function obtenerFondosModeradoMenorIgual1Año() {
@@ -90,9 +126,18 @@ function obtenerFondosModeradoMenorIgual1Año() {
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado <= 365);
 
-  // Salida
-  fondosModeradoMenorIgual1Año.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosModeradoMenorIgual1Año.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
+
 
 // Función obtener los fondos con perfil Moderado y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
 function obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años() {
@@ -101,9 +146,18 @@ function obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años() {
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
 
-  // Salida
-  fondosModeradoMayorIgual1AñoMenorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosModeradoMayorIgual1AñoMenorIgual3Años.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
+
 
 // Función obtener los fondos con perfil Moderado y un plazo mayor o igual a 3 años
 function obtenerfondosModeradoMayorIgual3Años() {
@@ -112,9 +166,18 @@ function obtenerfondosModeradoMayorIgual3Años() {
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
 
-  // Salida
-  fondosModeradoMayorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosModeradoMayorIgual3Años.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
+
 
 // Función obtener los fondos con perfil Agresivo y un plazo Menor o Igual a 1 año
 function obtenerFondosAgresivoMenorIgual1Año() {
@@ -123,9 +186,18 @@ function obtenerFondosAgresivoMenorIgual1Año() {
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado <= 365);
 
-  // Salida
-  fondosAgresivoMenorIgual1Año.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosAgresivoMenorIgual1Año.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
+
 
 // Función obtener los fondos con perfil Agresivo y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
 function obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años() {
@@ -134,9 +206,18 @@ function obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años() {
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
 
-  // Salida
-  fondosAgresivoMayorIgual1AñoMenorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosAgresivoMayorIgual1AñoMenorIgual3Años.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
 }
+
 
 // Función obtener los fondos con perfil Moderado y un plazo mayor o igual a 3 años
 function obtenerfondosAgresivoMayorIgual3Años() {
@@ -145,45 +226,70 @@ function obtenerfondosAgresivoMayorIgual3Años() {
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
 
-  // Salida
-  fondosAgresivoMayorIgual3Años.forEach(fondo => console.log("Nombre: " + fondo.nombre + ", " + "Perfil: " + fondo.perfil + ", " + "Plazo: " + fondo.plazoRecomendado));
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  fondosAgresivoMayorIgual3Años.forEach(fondo => {
+    let contenedorFondo = document.createElement('div');
+    contenedorFondo.className = 'fondo';
+    contenedorFondo.innerText = `${fondo.nombre}`;
+
+    contenedorFondos.appendChild(contenedorFondo);
+  });
+}
+
+
+// Función obtener un mensaje de fallo
+function mostrarUnMensajeDeFallo() {
+  // Salida UI
+  const contenedorFondos = document.getElementById('contenedorFondos');
+
+  let mensajeFallo = document.createElement('p');
+  mensajeFallo.innerText = `Lo sentimos no hay fondos para esta categoría. Pruebe con una categoría diferente.`;
+
+  contenedorFondos.appendChild(mensajeFallo);
 }
 
 
 // Entradas (La idea luego es que las entradas provengan desde los input tipo radio que usa el cliente)
-let entrada1 = prompt(`¿Con qué perfil de riesgo te identificas? (conservador, moderado o agresivo)`);
-let entrada2 = prompt(`¿Por cuánto tiempo quieres invertir? (corto, mediano o largo)`);
+let entrada1 = prompt(`¿Con qué perfil de riesgo te identificas? (conservador, moderado o agresivo)`, "agresivo");
+let entrada2 = prompt(`¿Por cuánto tiempo quieres invertir? (corto, mediano o largo)`, "largo");
 
 
 // Estructuras If (La idea luego es que la estructua pueda crear una salida UI)
+
 if (entrada1 === "conservador" && entrada2 === "corto") {
   obtenerFondosConservadorMenorIgual1Año();
 }
-if (entrada1 === "conservador" && entrada2 === "mediano") {
+else if (entrada1 === "conservador" && entrada2 === "mediano") {
   obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años();
 }
-if (entrada1 === "conservador" && entrada2 === "largo") {
-  obtenerfondosConservadorMayorIgual3Años();
+else if (entrada1 === "conservador" && entrada2 === "largo") {
+  // obtenerfondosConservadorMayorIgual3Años();
+  mostrarUnMensajeDeFallo();
 }
-if (entrada1 === "moderado" && entrada2 === "corto") {
+else if (entrada1 === "moderado" && entrada2 === "corto") {
   obtenerFondosModeradoMenorIgual1Año();
 }
-if (entrada1 === "moderado" && entrada2 === "mediano") {
+else if (entrada1 === "moderado" && entrada2 === "mediano") {
   obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años();
 }
-if (entrada1 === "moderado" && entrada2 === "largo") {
-  obtenerfondosModeradoMayorIgual3Años();
+else if (entrada1 === "moderado" && entrada2 === "largo") {
+  // obtenerfondosModeradoMayorIgual3Años();
+  mostrarUnMensajeDeFallo();
 }
-if (entrada1 === "agresivo" && entrada2 === "corto") {
+else if (entrada1 === "agresivo" && entrada2 === "corto") {
   obtenerFondosAgresivoMenorIgual1Año();
 }
-if (entrada1 === "agresivo" && entrada2 === "mediano") {
+else if (entrada1 === "agresivo" && entrada2 === "mediano") {
   obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años();
 }
-if (entrada1 === "agresivo" && entrada2 === "largo") {
+else if (entrada1 === "agresivo" && entrada2 === "largo") {
   obtenerfondosAgresivoMayorIgual3Años();
 }
-
+else {
+  mostrarUnMensajeDeFallo();
+}
 
 
 // INICIALIZACION DE FUNCIONES PARA PRUEBA
