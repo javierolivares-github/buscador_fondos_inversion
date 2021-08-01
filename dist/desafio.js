@@ -5,7 +5,8 @@ const botonBuscar = document.getElementById('btnBuscar');
 
 
 // Función constructora de objetos
-function FondoModelo (nombre, moneda, perfil, plazoRecomendado) {
+function FondoModelo (id, nombre, moneda, perfil, plazoRecomendado) {
+  this.id = id;
   this.nombre = nombre;
   this.moneda = moneda;
   this.perfil = perfil;
@@ -21,37 +22,37 @@ function FondoModelo (nombre, moneda, perfil, plazoRecomendado) {
 }
 
 // Creando Objetos
-const fondo1 = new FondoModelo("LarrainVial Cash", "Pesos", "Conservador", 1);
-const fondo2 = new FondoModelo("LarrainVial Ahorro Dolar", "Dolar", "Moderado", 90);
-const fondo3 = new FondoModelo("LarrainVial Ahorro Plazo", "Pesos", "Conservador", 30);
-const fondo4 = new FondoModelo("LarrainVial Ahorro Capital", "Pesos", "Conservador", 90);
-const fondo5 = new FondoModelo("LarrainVial Ahorro Corporativo", "Pesos", "Moderado", 365);
-const fondo6 = new FondoModelo("LarrainVial Ahorro Estrategico", "Pesos", "Conservador", 365);
-const fondo7 = new FondoModelo("LarrainVial Ahorro Dinamico", "Pesos", "Moderado", 365);
-const fondo8 = new FondoModelo("LarrainVial Defensiva Dolar", "Dolar", "Moderado", 365);
-const fondo9 = new FondoModelo("LarrainVial Bonos Latam", "Dolar", "Moderado", 365);
-const fondo10 = new FondoModelo("LarrainVial Baleanceado Conservador", "Pesos", "Conservador", 365);
-const fondo11 = new FondoModelo("LarrainVial Baleanceado Moderado", "Pesos", "Moderado", 365);
-const fondo12 = new FondoModelo("LarrainVial Baleanceado Crecimiento", "Pesos", "Agresivo", 365);
-const fondo13 = new FondoModelo("LarrainVial Dinamico Agresivo", "Pesos", "Agresivo", 1095);
-const fondo14 = new FondoModelo("LarrainVial Dinamico Balanceado", "Pesos", "Moderado", 365);
-const fondo15 = new FondoModelo("LarrainVial Dinamico Conservador", "Pesos", "Conservador", 180);
-const fondo16 = new FondoModelo("LarrainVial Dinamico Crecimiento", "Pesos", "Agresivo", 730);
-const fondo17 = new FondoModelo("LarrainVial Dinamico Moderado", "Pesos", "Moderado", 270);
-const fondo18 = new FondoModelo("LarrainVial Portafolio Lider", "Pesos", "Moderado", 365);
-const fondo19 = new FondoModelo("LarrainVial Protección", "Pesos", "Moderado", 365);
-const fondo20 = new FondoModelo("LarrainVial Estados Unidos", "Dolar", "Agresivo", 730);
-const fondo21 = new FondoModelo("LarrainVial Europa", "Dolar", "Agresivo", 1095);
-const fondo22 = new FondoModelo("LarrainVial Asia", "Dolar", "Agresivo", 730);
-const fondo23 = new FondoModelo("LarrainVial Latinoamericano", "Dolar", "Agresivo", 1095);
-const fondo24 = new FondoModelo("LarrainVial Enfoque", "Pesos", "Agresivo", 730);
+const fondo1 = new FondoModelo( 1, "LarrainVial Cash", "Pesos", "Conservador", 1);
+const fondo2 = new FondoModelo( 2, "LarrainVial Ahorro Dolar", "Dolar", "Moderado", 90);
+const fondo3 = new FondoModelo( 3, "LarrainVial Ahorro Plazo", "Pesos", "Conservador", 30);
+const fondo4 = new FondoModelo( 4, "LarrainVial Ahorro Capital", "Pesos", "Conservador", 90);
+const fondo5 = new FondoModelo( 5, "LarrainVial Ahorro Corporativo", "Pesos", "Moderado", 365);
+const fondo6 = new FondoModelo( 6, "LarrainVial Ahorro Estrategico", "Pesos", "Conservador", 365);
+const fondo7 = new FondoModelo( 7, "LarrainVial Ahorro Dinamico", "Pesos", "Moderado", 365);
+const fondo8 = new FondoModelo( 8, "LarrainVial Defensiva Dolar", "Dolar", "Moderado", 365);
+const fondo9 = new FondoModelo( 9, "LarrainVial Bonos Latam", "Dolar", "Moderado", 365);
+const fondo10 = new FondoModelo( 10, "LarrainVial Baleanceado Conservador", "Pesos", "Conservador", 365);
+const fondo11 = new FondoModelo( 11, "LarrainVial Baleanceado Moderado", "Pesos", "Moderado", 365);
+const fondo12 = new FondoModelo( 12, "LarrainVial Baleanceado Crecimiento", "Pesos", "Agresivo", 365);
+const fondo13 = new FondoModelo( 13, "LarrainVial Dinamico Agresivo", "Pesos", "Agresivo", 1095);
+const fondo14 = new FondoModelo( 14, "LarrainVial Dinamico Balanceado", "Pesos", "Moderado", 365);
+const fondo15 = new FondoModelo( 15, "LarrainVial Dinamico Conservador", "Pesos", "Conservador", 180);
+const fondo16 = new FondoModelo( 16, "LarrainVial Dinamico Crecimiento", "Pesos", "Agresivo", 730);
+const fondo17 = new FondoModelo( 17, "LarrainVial Dinamico Moderado", "Pesos", "Moderado", 270);
+const fondo18 = new FondoModelo( 18, "LarrainVial Portafolio Lider", "Pesos", "Moderado", 365);
+const fondo19 = new FondoModelo( 19, "LarrainVial Protección", "Pesos", "Moderado", 365);
+const fondo20 = new FondoModelo( 20, "LarrainVial Estados Unidos", "Dolar", "Agresivo", 730);
+const fondo21 = new FondoModelo( 21, "LarrainVial Europa", "Dolar", "Agresivo", 1095);
+const fondo22 = new FondoModelo( 22, "LarrainVial Asia", "Dolar", "Agresivo", 730);
+const fondo23 = new FondoModelo( 23, "LarrainVial Latinoamericano", "Dolar", "Agresivo", 1095);
+const fondo24 = new FondoModelo( 24, "LarrainVial Enfoque", "Pesos", "Agresivo", 730);
 
 
 // Guardando los objetos creados en un array
 const fondos = [fondo1, fondo2, fondo3, fondo4, fondo5, fondo6, fondo7, fondo8, fondo9, fondo10, fondo11, fondo12, fondo13, fondo14, fondo15, fondo16, fondo17, fondo18, fondo19, fondo20, fondo21, fondo22, fondo23, fondo24];
 
 
-// ENTRADAS
+// Guardando entradas de usuario
 let entradaPerfilUsuarioValor = function () {
   let perfil;
 
@@ -64,7 +65,7 @@ let entradaPerfilUsuarioValor = function () {
   return perfil;
 }
 
-
+// Guardando entradas de usuario
 let entradaPlazoInversionValor = function () {
   let plazo;
 
@@ -77,13 +78,40 @@ let entradaPlazoInversionValor = function () {
   return plazo;
 }
 
-// EVENTO
+// Evento buscar fondos según elección del usuario al hacer click
 botonBuscar.addEventListener('click', buscarFondoSegunEleccionUsuario);
 
 
-// Función obtener los fondos con perfil Conservador y un plazo menor o igual a 1 año
+// Evento guardar en el localStorage los valores seleccionados al hacer click
+botonBuscar.addEventListener('click', function () {
+  const perfilSeleccionado = entradaPerfilUsuarioValor();
+  const plazoSeleccionado = entradaPlazoInversionValor();
+
+  guardarEnLocalStorage("Perfil", JSON.stringify(perfilSeleccionado));
+  guardarEnLocalStorage("Plazo", JSON.stringify(plazoSeleccionado));
+});
+
+// Evento recuperar los valores desde el local storage al cargar el contenido
+document.addEventListener("DOMContentLoaded", recuperarDesdeLocalStorage("Perfil", "Plazo"))
+
+
+// Función guardar en el local storage
+function guardarEnLocalStorage(clave, valor) {
+  localStorage.setItem(clave, valor);
+}
+
+// Función recuperar desde el local storage
+function recuperarDesdeLocalStorage(clave1, clave2) {
+  const entradaPerfilUsuarioValorRecuperado = localStorage.getItem(clave1);
+  const entradaPlazoInversionValorRecuperado = localStorage.getItem(clave2);
+  console.log(entradaPerfilUsuarioValorRecuperado);
+  console.log(entradaPlazoInversionValorRecuperado);
+}
+
+
+// Función obtener los fondos con un perfil Conservador y un plazo menor o igual a 1 año
 function obtenerFondosConservadorMenorIgual1Año() {
-  // Filtro
+  // Filtrando
   let fondosConservadorMenorIgual1Año = fondos
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado <= 365);
@@ -102,9 +130,9 @@ function obtenerFondosConservadorMenorIgual1Año() {
 }
 
 
-// Función obtener los fondos con perfil Conservador y un plazo  mayores a 1 y menores a 3 años
+// Función obtener los fondos con un perfil Conservador y un plazo mayor a 1 año y menor a 3 años
 function obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años() {
-  // Filtro
+  // Filtrando
   let fondosConservadorMayorIgual1AñoMenorIgual3Años = fondos
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
@@ -123,9 +151,9 @@ function obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años() {
 }
 
 
-// Función obtener los fondos con perfil Conservador y un plazo mayor o igual a 3 años
+// Función obtener los fondos con un perfil Conservador y un plazo mayor o igual a 3 años
 function obtenerfondosConservadorMayorIgual3Años() {
-  // Filtro
+  // Filtrando
   let fondosConservadorMayorIgual3Años = fondos
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
@@ -144,9 +172,9 @@ function obtenerfondosConservadorMayorIgual3Años() {
 }
 
 
-// Función obtener los fondos con perfil Moderado y un plazo Menor o Igual a 1 año
+// Función obtener los fondos con un perfil Moderado y un plazo Menor o Igual a 1 año
 function obtenerFondosModeradoMenorIgual1Año() {
-  // Filtro
+  // Filtrando
   let fondosModeradoMenorIgual1Año = fondos
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado <= 365);
@@ -165,9 +193,9 @@ function obtenerFondosModeradoMenorIgual1Año() {
 }
 
 
-// Función obtener los fondos con perfil Moderado y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
+// Función obtener los fondos con un perfil Moderado y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
 function obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años() {
-  // Filtro
+  // Filtrando
   let fondosModeradoMayorIgual1AñoMenorIgual3Años = fondos
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
@@ -186,9 +214,9 @@ function obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años() {
 }
 
 
-// Función obtener los fondos con perfil Moderado y un plazo mayor o igual a 3 años
+// Función obtener los fondos con un perfil Moderado y un plazo mayor o igual a 3 años
 function obtenerfondosModeradoMayorIgual3Años() {
-  // Filtro
+  // Filtrando
   let fondosModeradoMayorIgual3Años = fondos
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
@@ -207,9 +235,9 @@ function obtenerfondosModeradoMayorIgual3Años() {
 }
 
 
-// Función obtener los fondos con perfil Agresivo y un plazo Menor o Igual a 1 año
+// Función obtener los fondos con un perfil Agresivo y un plazo Menor o Igual a 1 año
 function obtenerFondosAgresivoMenorIgual1Año() {
-  // Filtro
+  // Filtrando
   let fondosAgresivoMenorIgual1Año = fondos
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado <= 365);
@@ -228,9 +256,9 @@ function obtenerFondosAgresivoMenorIgual1Año() {
 }
 
 
-// Función obtener los fondos con perfil Agresivo y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
+// Función obtener los fondos con un perfil Agresivo y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
 function obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años() {
-  // Filtro
+  // Filtrando
   let fondosAgresivoMayorIgual1AñoMenorIgual3Años = fondos
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
@@ -249,9 +277,9 @@ function obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años() {
 }
 
 
-// Función obtener los fondos con perfil Moderado y un plazo mayor o igual a 3 años
+// Función obtener los fondos con un perfil Moderado y un plazo mayor o igual a 3 años
 function obtenerfondosAgresivoMayorIgual3Años() {
-  // Filtro
+  // Filtrando
   let fondosAgresivoMayorIgual3Años = fondos
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
@@ -272,13 +300,14 @@ function obtenerfondosAgresivoMayorIgual3Años() {
 
 // Función obtener un mensaje de fallo
 function mostrarUnMensajeDeFallo() {
-  // Salida UI
+  // Buscando un elemento en el dom
   const contenedorFondos = document.getElementById('contenedorFondos');
 
+  // Creando un mensaje de fallo para el usuario
   let mensajeFallo = `
     <p>Lo sentimos no hay fondos para esta categoría. Pruebe con una categoría diferente.</p>
   `
-
+  // Creando una salida en pantalla
   contenedorFondos.innerHTML = mensajeFallo;
 }
 
