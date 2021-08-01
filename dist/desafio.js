@@ -1,3 +1,9 @@
+// Obteneniendo elementos
+const perfilesDeRiesgo = document.querySelectorAll('.perfil');
+const plazosDeInversion = document.querySelectorAll('.plazo');
+const botonBuscar = document.getElementById('btnBuscar');
+
+
 // Función constructora de objetos
 function FondoModelo (nombre, moneda, perfil, plazoRecomendado) {
   this.nombre = nombre;
@@ -14,7 +20,7 @@ function FondoModelo (nombre, moneda, perfil, plazoRecomendado) {
   }
 }
 
-// Objetos
+// Creando Objetos
 const fondo1 = new FondoModelo("LarrainVial Cash", "Pesos", "Conservador", 1);
 const fondo2 = new FondoModelo("LarrainVial Ahorro Dolar", "Dolar", "Moderado", 90);
 const fondo3 = new FondoModelo("LarrainVial Ahorro Plazo", "Pesos", "Conservador", 30);
@@ -40,8 +46,39 @@ const fondo22 = new FondoModelo("LarrainVial Asia", "Dolar", "Agresivo", 730);
 const fondo23 = new FondoModelo("LarrainVial Latinoamericano", "Dolar", "Agresivo", 1095);
 const fondo24 = new FondoModelo("LarrainVial Enfoque", "Pesos", "Agresivo", 730);
 
-// Arreglo
+
+// Guardando los objetos creados en un array
 const fondos = [fondo1, fondo2, fondo3, fondo4, fondo5, fondo6, fondo7, fondo8, fondo9, fondo10, fondo11, fondo12, fondo13, fondo14, fondo15, fondo16, fondo17, fondo18, fondo19, fondo20, fondo21, fondo22, fondo23, fondo24];
+
+
+// ENTRADAS
+let entradaPerfilUsuarioValor = function () {
+  let perfil;
+
+  perfilesDeRiesgo.forEach(perfilRiesgo => {
+    if(perfilRiesgo.checked) {
+      perfil = perfilRiesgo.value;
+    }
+  });
+
+  return perfil;
+}
+
+
+let entradaPlazoInversionValor = function () {
+  let plazo;
+
+  plazosDeInversion.forEach(plazoInversion => {
+    if(plazoInversion.checked) {
+      plazo = plazoInversion.value;
+    }
+  });
+
+  return plazo;
+}
+
+// EVENTO
+botonBuscar.addEventListener('click', buscarFondoSegunEleccionUsuario);
 
 
 // Función obtener todos los fondos
@@ -251,59 +288,50 @@ function mostrarUnMensajeDeFallo() {
 }
 
 
-// Entradas (La idea luego es que las entradas provengan desde los input tipo radio que usa el cliente)
-let entrada1 = prompt(`¿Con qué perfil de riesgo te identificas? (conservador, moderado o agresivo)`, "agresivo");
-let entrada2 = prompt(`¿Por cuánto tiempo quieres invertir? (corto, mediano o largo)`, "largo");
 
 
-// Estructuras If (La idea luego es que la estructua pueda crear una salida UI)
-
-if (entrada1 === "conservador" && entrada2 === "corto") {
-  obtenerFondosConservadorMenorIgual1Año();
-}
-else if (entrada1 === "conservador" && entrada2 === "mediano") {
-  obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años();
-}
-else if (entrada1 === "conservador" && entrada2 === "largo") {
-  // obtenerfondosConservadorMayorIgual3Años();
-  mostrarUnMensajeDeFallo();
-}
-else if (entrada1 === "moderado" && entrada2 === "corto") {
-  obtenerFondosModeradoMenorIgual1Año();
-}
-else if (entrada1 === "moderado" && entrada2 === "mediano") {
-  obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años();
-}
-else if (entrada1 === "moderado" && entrada2 === "largo") {
-  // obtenerfondosModeradoMayorIgual3Años();
-  mostrarUnMensajeDeFallo();
-}
-else if (entrada1 === "agresivo" && entrada2 === "corto") {
-  obtenerFondosAgresivoMenorIgual1Año();
-}
-else if (entrada1 === "agresivo" && entrada2 === "mediano") {
-  obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años();
-}
-else if (entrada1 === "agresivo" && entrada2 === "largo") {
-  obtenerfondosAgresivoMayorIgual3Años();
-}
-else {
-  mostrarUnMensajeDeFallo();
+// Función obtener los fondos segun la combinación elegida por el usuario.
+function buscarFondoSegunEleccionUsuario() {
+  if (entradaPerfilUsuarioValor() === "conservador" && entradaPlazoInversionValor() === "corto") {
+    obtenerFondosConservadorMenorIgual1Año();
+  }
+  else if (entradaPerfilUsuarioValor() === "conservador" && entradaPlazoInversionValor() === "mediano") {
+    obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años();
+  }
+  else if (entradaPerfilUsuarioValor() === "conservador" && entradaPlazoInversionValor() === "largo") {
+    mostrarUnMensajeDeFallo();
+  }
+  else if (entradaPerfilUsuarioValor() === "moderado" && entradaPlazoInversionValor() === "corto") {
+    obtenerFondosModeradoMenorIgual1Año();
+  }
+  else if (entradaPerfilUsuarioValor() === "moderado" && entradaPlazoInversionValor() === "mediano") {
+    obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años();
+  }
+  else if (entradaPerfilUsuarioValor() === "moderado" && entradaPlazoInversionValor() === "largo") {
+    mostrarUnMensajeDeFallo();
+  }
+  else if (entradaPerfilUsuarioValor() === "agresivo" && entradaPlazoInversionValor() === "corto") {
+    obtenerFondosAgresivoMenorIgual1Año();
+  }
+  else if (entradaPerfilUsuarioValor() === "agresivo" && entradaPlazoInversionValor() === "mediano") {
+    obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años();
+  }
+  else if (entradaPerfilUsuarioValor() === "agresivo" && entradaPlazoInversionValor() === "largo") {
+    obtenerfondosAgresivoMayorIgual3Años();
+  }
+  else {
+    mostrarUnMensajeDeFallo();
+  }
 }
 
 
-// INICIALIZACION DE FUNCIONES PARA PRUEBA
-// obtenerNombreTodosLosFondos();
-// fondo21.obtenerInfo();
-// obtenerFondosConservadorMenorIgual1Año();
-// obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años();
-// obtenerfondosConservadorMayorIgual3Años();
-// obtenerFondosModeradoMenorIgual1Año();
-// obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años();
-// obtenerfondosModeradoMayorIgual3Años();
-// obtenerFondosAgresivoMenorIgual1Año();
-// obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años();
-// obtenerfondosAgresivoMayorIgual3Años();
+
+
+
+
+
+
+
 
 
 

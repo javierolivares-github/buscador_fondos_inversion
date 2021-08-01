@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Buscador de Fondos de Inversión</title>
+  <title>Buscador de Fondos Mutuos</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
@@ -9,24 +9,24 @@
 </head>
 <body>
   <section class="contenedor">
-    <h1>Buscador de fondos de inversión</h1>
+    <h1>Buscador de Fondos Mutuos</h1>
     <hr>
 
     <div class="contenedorPerfilYPlazo">
       <div class="perfilRiesgo">
         <h2 class="perfilRiesgo__title">¿Con qué perfil de riesgo te identificas?</h2>
-        <form>
+        <form id="formulario1">
           <p>Selecciona tu opción</p>
           <div class="form-group">
-            <input type="radio" id="conservador" value="conservador" name="perfil">
+            <input type="radio" id="conservador" value="conservador" name="perfil" class="perfil">
             <label for="conservador">CONSERVADOR</label>
           </div>
           <div class="form-group">
-            <input type="radio" id="moderado" value="moderado" name="perfil">
+            <input type="radio" id="moderado" value="moderado" name="perfil" class="perfil">
             <label for="moderado">MODERADO</label>
           </div>
           <div class="form-group">
-            <input type="radio" id="agresivo" value="agresivo" name="perfil">
+            <input type="radio" id="agresivo" value="agresivo" name="perfil" class="perfil">
             <label for="agresivo">AGRESIVO</label>
           </div>
         </form>
@@ -34,29 +34,29 @@
 
       <div class="plazoInversion">
         <h2 class="plazoInversion__title">¿Por cuánto tiempo quieres invertir?</h2>
-        <form>
+        <form id="form2">
           <p>Selecciona tu opción</p>
           <div class="form-group">
-            <input type="radio" id="corto" value="corto" name="plazo">
+            <input type="radio" id="corto" value="corto" name="plazo" class="plazo">
             <label for="corto">0-1 AÑO</label>
           </div>
           <div class="form-group">
-            <input type="radio" id="mediano" value="mediano" name="plazo">
+            <input type="radio" id="mediano" value="mediano" name="plazo" class="plazo">
             <label for="mediano">1-3 AÑOS</label>
           </div>
           <div class="form-group">
-            <input type="radio" id="largo" value="largo" name="plazo">
+            <input type="radio" id="largo" value="largo" name="plazo" class="plazo">
             <label for="largo">3 + AÑOS</label>
           </div>
         </form>
       </div>
     </div>
 
-    <button class="btn">BUSCAR</button>
+    <button class="btn" id="btnBuscar">BUSCAR</button>
 
 
     <section class="fondos">
-      <h2 class="fondos__title">Fondos de Inversión según TU elección</h2>
+      <h2 class="fondos__title">Fondos Mutuos según TU elección</h2>
       <div class="contenedorFondos" id="contenedorFondos">
         <!-- Por código JavaScript -->
       </div>
