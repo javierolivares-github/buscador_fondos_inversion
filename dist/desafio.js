@@ -74,7 +74,7 @@ function obtenerFondosConservadorMenorIgual1Año() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -94,7 +94,7 @@ function obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -114,7 +114,7 @@ function obtenerfondosConservadorMayorIgual3Años() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -134,7 +134,7 @@ function obtenerFondosModeradoMenorIgual1Año() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -154,7 +154,7 @@ function obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -174,7 +174,7 @@ function obtenerfondosModeradoMayorIgual3Años() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -194,7 +194,7 @@ function obtenerFondosAgresivoMenorIgual1Año() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -214,7 +214,7 @@ function obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -234,7 +234,7 @@ function obtenerfondosAgresivoMayorIgual3Años() {
     contenedorFondo.className = 'fondo';
     contenedorFondo.innerText = `${fondo.nombre}`;
 
-    contenedorFondos.appendChild(contenedorFondo);
+    contenedorFondos.innerHTML = contenedorFondo;
   });
 }
 
@@ -247,7 +247,7 @@ function mostrarUnMensajeDeFallo() {
   let mensajeFallo = document.createElement('p');
   mensajeFallo.innerText = `Lo sentimos no hay fondos para esta categoría. Pruebe con una categoría diferente.`;
 
-  contenedorFondos.appendChild(mensajeFallo);
+  contenedorFondos.innerHTML = mensajeFallo;
 }
 
 
