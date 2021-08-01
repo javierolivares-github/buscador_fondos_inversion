@@ -81,21 +81,6 @@ let entradaPlazoInversionValor = function () {
 botonBuscar.addEventListener('click', buscarFondoSegunEleccionUsuario);
 
 
-// Función obtener todos los fondos
-function obtenerNombreTodosLosFondos () {
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
-  fondos.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.appendChild(contenedorFondo);
-  });
-}
-
-
 // Función obtener los fondos con perfil Conservador y un plazo menor o igual a 1 año
 function obtenerFondosConservadorMenorIgual1Año() {
   // Filtro
@@ -103,16 +88,17 @@ function obtenerFondosConservadorMenorIgual1Año() {
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado <= 365);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
-  fondosConservadorMenorIgual1Año.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
-  });
+   // Creando una plantilla para cada fondo filtrado
+   let plantillafondosConservadorMenorIgual1Año = '';
+  
+   fondosConservadorMenorIgual1Año.forEach(fondo => {
+     plantillafondosConservadorMenorIgual1Año += `
+       <div class="fondo">${fondo.nombre}</div>
+     `;
+   });
+ 
+   // Creando una salida en pantalla
+   document.getElementById('contenedorFondos').innerHTML = plantillafondosConservadorMenorIgual1Año;
 }
 
 
@@ -123,16 +109,17 @@ function obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años() {
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
+  // Creando una plantilla para cada fondo filtrado
+  let plantillafondosConservadorMayorIgual1AñoMenorIgual3Años = '';
+  
   fondosConservadorMayorIgual1AñoMenorIgual3Años.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
+    plantillafondosConservadorMayorIgual1AñoMenorIgual3Años += `
+      <div class="fondo">${fondo.nombre}</div>
+    `;
   });
+
+  // Creando una salida en pantalla
+  document.getElementById('contenedorFondos').innerHTML = plantillafondosConservadorMayorIgual1AñoMenorIgual3Años;
 }
 
 
@@ -143,16 +130,17 @@ function obtenerfondosConservadorMayorIgual3Años() {
     .filter(fondo => fondo.perfil === "Conservador")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
-  fondosConservadorMayorIgual3Años.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
-  });
+   // Creando una plantilla para cada fondo filtrado
+   let plantillafondosConservadorMayorIgual3Años = '';
+  
+   fondosConservadorMayorIgual3Años.forEach(fondo => {
+     plantillafondosConservadorMayorIgual3Años += `
+       <div class="fondo">${fondo.nombre}</div>
+     `;
+   });
+ 
+   // Creando una salida en pantalla
+   document.getElementById('contenedorFondos').innerHTML = plantillafondosConservadorMayorIgual3Años;
 }
 
 
@@ -163,16 +151,17 @@ function obtenerFondosModeradoMenorIgual1Año() {
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado <= 365);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
+  // Creando una plantilla para cada fondo filtrado
+  let plantillafondosModeradoMenorIgual1Año = '';
+  
   fondosModeradoMenorIgual1Año.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
+    plantillafondosModeradoMenorIgual1Año += `
+      <div class="fondo">${fondo.nombre}</div>
+    `;
   });
+
+  // Creando una salida en pantalla
+  document.getElementById('contenedorFondos').innerHTML = plantillafondosModeradoMenorIgual1Año;
 }
 
 
@@ -183,16 +172,17 @@ function obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años() {
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
+  // Creando una plantilla para cada fondo filtrado
+  let plantillafondosModeradoMayorIgual1AñoMenorIgual3Años = '';
+  
   fondosModeradoMayorIgual1AñoMenorIgual3Años.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
+    plantillafondosModeradoMayorIgual1AñoMenorIgual3Años += `
+      <div class="fondo">${fondo.nombre}</div>
+    `;
   });
+
+  // Creando una salida en pantalla
+  document.getElementById('contenedorFondos').innerHTML = plantillafondosModeradoMayorIgual1AñoMenorIgual3Años;
 }
 
 
@@ -203,16 +193,17 @@ function obtenerfondosModeradoMayorIgual3Años() {
     .filter(fondo => fondo.perfil === "Moderado")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
+  // Creando una plantilla para cada fondo filtrado
+  let plantillafondosModeradoMayorIgual3Años = '';
+  
   fondosModeradoMayorIgual3Años.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
+    plantillafondosModeradoMayorIgual3Años += `
+      <div class="fondo">${fondo.nombre}</div>
+    `;
   });
+
+  // Creando una salida en pantalla
+  document.getElementById('contenedorFondos').innerHTML = plantillafondosModeradoMayorIgual3Años;
 }
 
 
@@ -223,16 +214,17 @@ function obtenerFondosAgresivoMenorIgual1Año() {
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado <= 365);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
+  // Creando una plantilla para cada fondo filtrado
+  let plantillafondosAgresivoMenorIgual1Año = '';
+  
   fondosAgresivoMenorIgual1Año.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
+    plantillafondosAgresivoMenorIgual1Año += `
+      <div class="fondo">${fondo.nombre}</div>
+    `;
   });
+
+  // Creando una salida en pantalla
+  document.getElementById('contenedorFondos').innerHTML = plantillafondosAgresivoMenorIgual1Año;
 }
 
 
@@ -243,16 +235,17 @@ function obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años() {
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado >= 365 && fondo.plazoRecomendado <= 1095);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
+  // Creando una plantilla para cada fondo filtrado
+  let plantillafondosAgresivoMayorIgual1AñoMenorIgual3Años = '';
+  
   fondosAgresivoMayorIgual1AñoMenorIgual3Años.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
+    plantillafondosAgresivoMayorIgual1AñoMenorIgual3Años += `
+      <div class="fondo">${fondo.nombre}</div>
+    `;
   });
+
+  // Creando una salida en pantalla
+  document.getElementById('contenedorFondos').innerHTML = plantillafondosAgresivoMayorIgual1AñoMenorIgual3Años;
 }
 
 
@@ -263,16 +256,17 @@ function obtenerfondosAgresivoMayorIgual3Años() {
     .filter(fondo => fondo.perfil === "Agresivo")
     .filter(fondo => fondo.plazoRecomendado >= 1095);
 
-  // Salida UI
-  const contenedorFondos = document.getElementById('contenedorFondos');
-
+  // Creando una plantilla para cada fondo filtrado
+  let plantillafondosAgresivoMayorIgual3Años = '';
+  
   fondosAgresivoMayorIgual3Años.forEach(fondo => {
-    let contenedorFondo = document.createElement('div');
-    contenedorFondo.className = 'fondo';
-    contenedorFondo.innerText = `${fondo.nombre}`;
-
-    contenedorFondos.innerHTML = contenedorFondo;
+    plantillafondosAgresivoMayorIgual3Años += `
+      <div class="fondo">${fondo.nombre}</div>
+    `;
   });
+
+  // Creando una salida en pantalla
+  document.getElementById('contenedorFondos').innerHTML = plantillafondosAgresivoMayorIgual3Años;
 }
 
 
@@ -281,8 +275,9 @@ function mostrarUnMensajeDeFallo() {
   // Salida UI
   const contenedorFondos = document.getElementById('contenedorFondos');
 
-  let mensajeFallo = document.createElement('p');
-  mensajeFallo.innerText = `Lo sentimos no hay fondos para esta categoría. Pruebe con una categoría diferente.`;
+  let mensajeFallo = `
+    <p>Lo sentimos no hay fondos para esta categoría. Pruebe con una categoría diferente.</p>
+  `
 
   contenedorFondos.innerHTML = mensajeFallo;
 }
