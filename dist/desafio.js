@@ -23,7 +23,7 @@ localStorage.setItem("listadoFondosPantallaInicial", JSON.stringify(fondosPantal
 const listadoFondosPantallaInicial = JSON.parse(localStorage.getItem("listadoFondosPantallaInicial"));
 
 
-// Funcion crear una UI para los datos iniciales provenientes del local storage
+// Creando una función que cree una UI para los datos iniciales provenientes del local storage
 function crearUIDatosIniciales () {
   let plantillaDatosIniciales = '';
 
@@ -36,11 +36,11 @@ function crearUIDatosIniciales () {
 }
 
 
-// Evento crear una UI para datos iniciales al cargar la página
+// Activando la funcion crear UI al cargar la página
 document.addEventListener('DOMContentLoaded', crearUIDatosIniciales());
 
 
-// Función constructora de objetos
+// Creando una función constructora de objetos
 function FondoModelo (id, nombre, moneda, perfil, plazoRecomendado) {
   this.id = id;
   this.nombre = nombre;
@@ -88,7 +88,7 @@ const fondo24 = new FondoModelo( 24, "LarrainVial Enfoque", "Pesos", "Agresivo",
 const fondos = [fondo1, fondo2, fondo3, fondo4, fondo5, fondo6, fondo7, fondo8, fondo9, fondo10, fondo11, fondo12, fondo13, fondo14, fondo15, fondo16, fondo17, fondo18, fondo19, fondo20, fondo21, fondo22, fondo23, fondo24];
 
 
-// Guardando entradas de usuario
+// Guardando la entrada del usuario proveniente de los input tipo radio
 let entradaPerfilUsuarioValor = function () {
   let perfil;
 
@@ -101,7 +101,7 @@ let entradaPerfilUsuarioValor = function () {
   return perfil;
 }
 
-// Guardando entradas de usuario
+// Guardando la entrada del usuario proveniente de los input tipo radio
 let entradaPlazoInversionValor = function () {
   let plazo;
 
@@ -114,7 +114,7 @@ let entradaPlazoInversionValor = function () {
   return plazo;
 }
 
-// Evento buscar fondos según elección del usuario al hacer click
+// Activando la función buscar fondos según elección de usuario al hacer click en el botón buscar
 botonBuscar.addEventListener('click', buscarFondoSegunEleccionUsuario);
 
 
