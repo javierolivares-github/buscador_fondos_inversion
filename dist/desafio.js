@@ -1,7 +1,43 @@
-// Obteneniendo elementos
+// Obteneniendo elementos del DOM
 const perfilesDeRiesgo = document.querySelectorAll('.perfil');
 const plazosDeInversion = document.querySelectorAll('.plazo');
 const botonBuscar = document.getElementById('btnBuscar');
+
+
+// Creando una estructura de datos iniciales
+const fondosPantallaInicial = [
+  {id: 1, nombre: "LarrainVial Cash", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 1},
+  {id: 3, nombre: "LarrainVial Ahorro Plazo", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 30},
+  {id: 4, nombre: "LarrainVial Ahorro Capital", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 90},
+  {id: 6, nombre: "LarrainVial Ahorro Estrategico", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 365},
+  {id: 10, nombre: "LarrainVial Baleanceado Conservador", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 365},
+  {id: 15, nombre: "LarrainVial Dinamico Conservador", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 180}
+]
+
+
+// Guardando la estructura de datos iniciales en el local storage
+localStorage.setItem("listadoFondosPantallaInicial", JSON.stringify(fondosPantallaInicial));
+
+
+// Recuperando la estructura de datos iniciales desde el local stotage
+const listadoFondosPantallaInicial = JSON.parse(localStorage.getItem("listadoFondosPantallaInicial"));
+
+
+// Funcion crear una UI para los datos iniciales provenientes del local storage
+function crearUIDatosIniciales () {
+  let plantillaDatosIniciales = '';
+
+  listadoFondosPantallaInicial.forEach(fondo => {
+    plantillaDatosIniciales += `<div class="fondo">${fondo.nombre}</div>`
+  });
+
+  // Creando una salida en pantalla
+  document.getElementById('contenedorFondos').innerHTML = plantillaDatosIniciales;
+}
+
+
+// Evento crear una UI para datos iniciales al cargar la página
+document.addEventListener('DOMContentLoaded', crearUIDatosIniciales());
 
 
 // Función constructora de objetos
@@ -80,33 +116,6 @@ let entradaPlazoInversionValor = function () {
 
 // Evento buscar fondos según elección del usuario al hacer click
 botonBuscar.addEventListener('click', buscarFondoSegunEleccionUsuario);
-
-
-// Evento guardar en el localStorage los valores seleccionados al hacer click
-botonBuscar.addEventListener('click', function () {
-  const perfilSeleccionado = entradaPerfilUsuarioValor();
-  const plazoSeleccionado = entradaPlazoInversionValor();
-
-  guardarEnLocalStorage("Perfil", JSON.stringify(perfilSeleccionado));
-  guardarEnLocalStorage("Plazo", JSON.stringify(plazoSeleccionado));
-});
-
-// Evento recuperar los valores desde el local storage al cargar el contenido
-document.addEventListener("DOMContentLoaded", recuperarDesdeLocalStorage("Perfil", "Plazo"))
-
-
-// Función guardar en el local storage
-function guardarEnLocalStorage(clave, valor) {
-  localStorage.setItem(clave, valor);
-}
-
-// Función recuperar desde el local storage
-function recuperarDesdeLocalStorage(clave1, clave2) {
-  const entradaPerfilUsuarioValorRecuperado = localStorage.getItem(clave1);
-  const entradaPlazoInversionValorRecuperado = localStorage.getItem(clave2);
-  console.log(entradaPerfilUsuarioValorRecuperado);
-  console.log(entradaPlazoInversionValorRecuperado);
-}
 
 
 // Función obtener los fondos con un perfil Conservador y un plazo menor o igual a 1 año
@@ -305,7 +314,7 @@ function mostrarUnMensajeDeFallo() {
 
   // Creando un mensaje de fallo para el usuario
   let mensajeFallo = `
-    <p>Lo sentimos no hay fondos para esta categoría. Pruebe con una categoría diferente.</p>
+    <p style="color:red;">Lo sentimos no hay fondos para esta categoría.</p>
   `
   // Creando una salida en pantalla
   contenedorFondos.innerHTML = mensajeFallo;
