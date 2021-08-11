@@ -1,7 +1,8 @@
 // Obteneniendo elementos del DOM
 const perfilesDeRiesgo = document.querySelectorAll('.perfil');
 const plazosDeInversion = document.querySelectorAll('.plazo');
-const botonBuscar = document.getElementById('btnBuscar');
+const botonBuscar = $('#btnBuscar');
+
 
 
 // Creando una estructura de datos iniciales
@@ -37,7 +38,7 @@ function crearUIDatosIniciales () {
 
 
 // Activando la funcion crear UI al cargar la página
-document.addEventListener('DOMContentLoaded', crearUIDatosIniciales());
+$('document').ready(crearUIDatosIniciales)
 
 
 // Creando una función constructora de objetos
@@ -115,7 +116,7 @@ let entradaPlazoInversionValor = function () {
 }
 
 // Activando la función buscar fondos según elección de usuario al hacer click en el botón buscar
-botonBuscar.addEventListener('click', buscarFondoSegunEleccionUsuario);
+botonBuscar.on('click', buscarFondoSegunEleccionUsuario);
 
 
 // Función obtener los fondos con un perfil Conservador y un plazo menor o igual a 1 año
