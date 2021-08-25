@@ -6,7 +6,8 @@ const botonBuscar = $('#btnBuscar');
 // Obteniendo datos de inicio desde el archivo "datosIniciales.json"
 const URLJSON = "./datosIniciales.json";
 
-function obtenerDatosIniciales() {
+// Función que crea datos de inicio usando AJAX y Jquery
+function crearDatosIniciales() {
   $.get(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
       let datosIniciales = respuesta;
@@ -27,9 +28,11 @@ function ocultarTitulo () {
 }
 
 
-// Activando funciones al cargar i recargar la página
+// Mostrando el titulo con animación al cargar la página
 $('document').ready(mostrarTitulo);
-$('document').ready(obtenerDatosIniciales);
+
+// Creando datos iniciales al cargar la página
+$('document').ready(crearDatosIniciales);
 
 
 // Creando una función constructora de objetos
