@@ -3,42 +3,33 @@ const perfilesDeRiesgo = document.querySelectorAll('.perfil');
 const plazosDeInversion = document.querySelectorAll('.plazo');
 const botonBuscar = $('#btnBuscar');
 
+// Obteniendo datos de inicio desde el archivo "datosIniciales.json"
+const URLJSON = "./datosIniciales.json";
 
+function obtenerDatosIniciales() {
+  $.get(URLJSON, function (respuesta, estado) {
+    if (estado === "success") {
+      let datosIniciales = respuesta;
+      for (const dato of datosIniciales) {
+        $("#contenedorFondos").append(`<div class="fondo">${dato.nombre}</div>`);
+      }
+    }
+  })
+}
 
-// Creando una estructura de datos iniciales
-const fondosPantallaInicial = [
-  {id: 1, nombre: "LarrainVial Cash", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 1},
-  {id: 3, nombre: "LarrainVial Ahorro Plazo", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 30},
-  {id: 4, nombre: "LarrainVial Ahorro Capital", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 90},
-  {id: 6, nombre: "LarrainVial Ahorro Estrategico", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 365},
-  {id: 10, nombre: "LarrainVial Baleanceado Conservador", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 365},
-  {id: 15, nombre: "LarrainVial Dinamico Conservador", moneda: "Pesos", perfil: "Conservador", plazoRecomendado: 180}
-]
+// Funciones para incorporar animación al título
+function mostrarTitulo () {
+  $('#fondos_title').fadeIn()
+}
 
-
-// Guardando la estructura de datos iniciales en el local storage
-localStorage.setItem("listadoFondosPantallaInicial", JSON.stringify(fondosPantallaInicial));
-
-
-// Recuperando la estructura de datos iniciales desde el local stotage
-const listadoFondosPantallaInicial = JSON.parse(localStorage.getItem("listadoFondosPantallaInicial"));
-
-
-// Creando una función que cree una UI para los datos iniciales provenientes del local storage
-function crearUIDatosIniciales () {
-  let plantillaDatosIniciales = '';
-
-  listadoFondosPantallaInicial.forEach(fondo => {
-    plantillaDatosIniciales += `<div class="fondo">${fondo.nombre}</div>`
-  });
-
-  // Creando una salida en pantalla
-  document.getElementById('contenedorFondos').innerHTML = plantillaDatosIniciales;
+function ocultarTitulo () {
+  $('#fondos_title').fadeOut();
 }
 
 
-// Activando la funcion crear UI al cargar la página
-$('document').ready(crearUIDatosIniciales)
+// Activando funciones al cargar i recargar la página
+$('document').ready(mostrarTitulo);
+$('document').ready(obtenerDatosIniciales);
 
 
 // Creando una función constructora de objetos
@@ -116,7 +107,9 @@ let entradaPlazoInversionValor = function () {
 }
 
 // Activando la función buscar fondos según elección de usuario al hacer click en el botón buscar
-botonBuscar.on('click', buscarFondoSegunEleccionUsuario);
+botonBuscar.click(ocultarTitulo);
+botonBuscar.click(mostrarTitulo);
+botonBuscar.click(buscarFondoSegunEleccionUsuario);
 
 
 // Función obtener los fondos con un perfil Conservador y un plazo menor o igual a 1 año
