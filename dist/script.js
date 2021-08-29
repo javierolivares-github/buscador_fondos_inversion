@@ -6,7 +6,7 @@ const botonBuscar = $('#btnBuscar');
 // Obteniendo datos desde el archivo "datosIniciales.json"
 const URLJSON = "./datosIniciales.json";
 
-// Función que crea datos de inicio usando AJAX y Jquery
+// Función que obtiene y crea datos de inicio usando AJAX y Jquery
 function crearDatosIniciales() {
   $.get(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -35,7 +35,7 @@ $('document').ready(mostrarTituloConAnimacion);
 $('document').ready(crearDatosIniciales);
 
 
-// Creando una función constructora de objetos
+// Función constructora de objetos
 function FondoModelo (id, nombre, moneda, perfil, plazoRecomendado) {
   this.id = id;
   this.nombre = nombre;
@@ -109,12 +109,13 @@ let entradaPlazoInversionValor = function () {
   return plazo;
 }
 
-// Activando la función buscar fondos según elección de usuario al hacer click en el botón buscar
+// Activando funciones al dar click al botón buscar
 botonBuscar.click(ocultarTituloConAnimacion);
 botonBuscar.click(mostrarTituloConAnimacion);
 botonBuscar.click(buscarFondoSegunEleccionUsuario);
 
 
+// FUNCIONES DE BUSQUEDA, FILTRADO y CREACION DE PANTALLAS UI
 // Función obtener los fondos con un perfil Conservador y un plazo menor o igual a 1 año
 function obtenerFondosConservadorMenorIgual1Año() {
   // Filtrando
