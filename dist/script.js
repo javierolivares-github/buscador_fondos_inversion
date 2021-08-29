@@ -3,7 +3,7 @@ const perfilesDeRiesgo = document.querySelectorAll('.perfil');
 const plazosDeInversion = document.querySelectorAll('.plazo');
 const botonBuscar = $('#btnBuscar');
 
-// Obteniendo datos de inicio desde el archivo "datosIniciales.json"
+// Obteniendo datos desde el archivo "datosIniciales.json"
 const URLJSON = "./datosIniciales.json";
 
 // Función que crea datos de inicio usando AJAX y Jquery
@@ -19,17 +19,17 @@ function crearDatosIniciales() {
 }
 
 // Funciones para incorporar animación al título
-function mostrarTitulo () {
+function mostrarTituloConAnimacion () {
   $('#fondos_title').fadeIn()
 }
 
-function ocultarTitulo () {
+function ocultarTituloConAnimacion () {
   $('#fondos_title').fadeOut();
 }
 
 
 // Mostrando el titulo con animación al cargar la página
-$('document').ready(mostrarTitulo);
+$('document').ready(mostrarTituloConAnimacion);
 
 // Creando datos iniciales al cargar la página
 $('document').ready(crearDatosIniciales);
@@ -110,8 +110,8 @@ let entradaPlazoInversionValor = function () {
 }
 
 // Activando la función buscar fondos según elección de usuario al hacer click en el botón buscar
-botonBuscar.click(ocultarTitulo);
-botonBuscar.click(mostrarTitulo);
+botonBuscar.click(ocultarTituloConAnimacion);
+botonBuscar.click(mostrarTituloConAnimacion);
 botonBuscar.click(buscarFondoSegunEleccionUsuario);
 
 
