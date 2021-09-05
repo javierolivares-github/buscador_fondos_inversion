@@ -28,13 +28,6 @@ function ocultarTitulo () {
 }
 
 
-// Mostrando el titulo con animación al cargar la página
-$('document').ready(animarTitulo);
-
-// Creando datos iniciales al cargar la página
-// $('document').ready(datosIniciales);
-
-
 // Función constructora de objetos
 function FondoModelo (id, nombre, moneda, perfil, plazoRecomendado) {
   this.id = id;
@@ -109,25 +102,36 @@ let plazo = function () {
   return plazoUsuario;
 }
 
-// Activando funciones al dar click al botón buscar
-btnBuscar.click(ocultarTitulo);
-btnBuscar.click(animarTitulo);
-btnBuscar.click(buscarFondo);
-btnBuscar.click(guardarPerfilPlazo);
-
 // GUARDAR EN LOCAL
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+const obtenerLocal = (clave) => { localStorage.getItem(clave) };
 
 function guardarPerfilPlazo() {
   guardarLocal('perfil', perfil());
   guardarLocal('plazo', plazo());
 }
 
-const perfilLocal = localStorage.getItem('perfil');
-const plazoLocal = localStorage.getItem('plazo');
+const perfilRecuperado = localStorage.getItem('perfil');
+const plazoRecuperado = localStorage.getItem('plazo');
 
-console.log(perfilLocal, plazoLocal);
+console.log(typeof plazoRecuperado)
 
+
+// console.log(perfil1, plazo1);
+
+// Funciones que se activan al dar click al botón buscar
+btnBuscar.click(ocultarTitulo);
+btnBuscar.click(animarTitulo);
+btnBuscar.click(guardarPerfilPlazo);
+btnBuscar.click(() => {
+  buscarFondo(perfil(), plazo());
+});
+
+// Funciones que se activan al recargar la página
+$('document').ready(animarTitulo);
+$('document').ready(() => {
+  buscarFondo(perfilRecuperado, plazoRecuperado);
+});
 
 
 
@@ -338,32 +342,32 @@ function mensajeFallo() {
 
 
 // Función obtener los fondos segun la combinación elegida por el usuario.
-function buscarFondo () {
-  if (perfil() === "conservador" && plazo() === "corto") {
+function buscarFondo(perfilU, plazoU) {
+  if (perfilU === "conservador" && plazoU === "corto") {
     obtenerConservadorCorto();
   }
-  else if (perfil() === "conservador" && plazo() === "mediano") {
+  else if (perfilU === "conservador" && plazoU === "mediano") {
     obtenerConservadorMediano();
   }
-  else if (perfil() === "conservador" && plazo() === "largo") {
+  else if (perfilU === "conservador" && plazoU === "largo") {
     mensajeFallo();
   }
-  else if (perfil() === "moderado" && plazo() === "corto") {
+  else if (perfilU === "moderado" && plazoU === "corto") {
     obtenerModeradoCorto();
   }
-  else if (perfil() === "moderado" && plazo() === "mediano") {
+  else if (perfilU === "moderado" && plazoU === "mediano") {
     obtenerModeradoMediano();
   }
-  else if (perfil() === "moderado" && plazo() === "largo") {
+  else if (perfilU === "moderado" && plazoU === "largo") {
     mensajeFallo();
   }
-  else if (perfil() === "agresivo" && plazo() === "corto") {
+  else if (perfilU === "agresivo" && plazoU === "corto") {
     obtenerAgresivoCorto();
   }
-  else if (perfil() === "agresivo" && plazo() === "mediano") {
+  else if (perfilU === "agresivo" && plazoU === "mediano") {
     obtenerAgresivoMediano();
   }
-  else if (perfil() === "agresivo" && plazo() === "largo") {
+  else if (perfilU === "agresivo" && plazoU === "largo") {
     obtenerAgresivoLargo();
   }
   else {
