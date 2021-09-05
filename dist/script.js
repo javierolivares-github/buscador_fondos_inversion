@@ -7,7 +7,7 @@ const botonBuscar = $('#btnBuscar');
 const URLJSON = "./datosIniciales.json";
 
 // Función que obtiene y crea datos de inicio usando AJAX y Jquery
-function crearDatosIniciales() {
+function datosIniciales() {
   $.get(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
       let datosIniciales = respuesta;
@@ -19,20 +19,20 @@ function crearDatosIniciales() {
 }
 
 // Funciones para incorporar animación al título
-function mostrarTituloConAnimacion () {
+function animarTitulo () {
   $('#fondos_title').fadeIn()
 }
 
-function ocultarTituloConAnimacion () {
+function ocultarTitulo () {
   $('#fondos_title').fadeOut();
 }
 
 
 // Mostrando el titulo con animación al cargar la página
-$('document').ready(mostrarTituloConAnimacion);
+$('document').ready(animarTitulo);
 
 // Creando datos iniciales al cargar la página
-$('document').ready(crearDatosIniciales);
+$('document').ready(datosIniciales);
 
 
 // Función constructora de objetos
@@ -84,34 +84,34 @@ const fondos = [fondo1, fondo2, fondo3, fondo4, fondo5, fondo6, fondo7, fondo8, 
 
 
 // Guardando la entrada del usuario proveniente de los input tipo radio
-let entradaPerfilUsuarioValor = function () {
-  let perfil;
+let perfil = function () {
+  let perfilUsuario;
 
   perfilesDeRiesgo.forEach(perfilRiesgo => {
     if(perfilRiesgo.checked) {
-      perfil = perfilRiesgo.value;
+      perfilUsuario = perfilRiesgo.value;
     }
   });
 
-  return perfil;
+  return perfilUsuario;
 }
 
 // Guardando la entrada del usuario proveniente de los input tipo radio
-let entradaPlazoInversionValor = function () {
-  let plazo;
+let plazo = function () {
+  let plazoUsuario;
 
   plazosDeInversion.forEach(plazoInversion => {
     if(plazoInversion.checked) {
-      plazo = plazoInversion.value;
+      plazoUsuario = plazoInversion.value;
     }
   });
 
-  return plazo;
+  return plazoUsuario;
 }
 
 // Activando funciones al dar click al botón buscar
-botonBuscar.click(ocultarTituloConAnimacion);
-botonBuscar.click(mostrarTituloConAnimacion);
+botonBuscar.click(ocultarTitulo);
+botonBuscar.click(animarTitulo);
 botonBuscar.click(buscarFondoSegunEleccionUsuario);
 
 
@@ -323,31 +323,31 @@ function mostrarUnMensajeDeFallo() {
 
 // Función obtener los fondos segun la combinación elegida por el usuario.
 function buscarFondoSegunEleccionUsuario() {
-  if (entradaPerfilUsuarioValor() === "conservador" && entradaPlazoInversionValor() === "corto") {
+  if (perfil() === "conservador" && plazo() === "corto") {
     obtenerFondosConservadorMenorIgual1Año();
   }
-  else if (entradaPerfilUsuarioValor() === "conservador" && entradaPlazoInversionValor() === "mediano") {
+  else if (perfil() === "conservador" && plazo() === "mediano") {
     obtenerfondosConservadorMayorIgual1AñoMenorIgual3Años();
   }
-  else if (entradaPerfilUsuarioValor() === "conservador" && entradaPlazoInversionValor() === "largo") {
+  else if (perfil() === "conservador" && plazo() === "largo") {
     mostrarUnMensajeDeFallo();
   }
-  else if (entradaPerfilUsuarioValor() === "moderado" && entradaPlazoInversionValor() === "corto") {
+  else if (perfil() === "moderado" && plazo() === "corto") {
     obtenerFondosModeradoMenorIgual1Año();
   }
-  else if (entradaPerfilUsuarioValor() === "moderado" && entradaPlazoInversionValor() === "mediano") {
+  else if (perfil() === "moderado" && plazo() === "mediano") {
     obtenerfondosModeradoMayorIgual1AñoMenorIgual3Años();
   }
-  else if (entradaPerfilUsuarioValor() === "moderado" && entradaPlazoInversionValor() === "largo") {
+  else if (perfil() === "moderado" && plazo() === "largo") {
     mostrarUnMensajeDeFallo();
   }
-  else if (entradaPerfilUsuarioValor() === "agresivo" && entradaPlazoInversionValor() === "corto") {
+  else if (perfil() === "agresivo" && plazo() === "corto") {
     obtenerFondosAgresivoMenorIgual1Año();
   }
-  else if (entradaPerfilUsuarioValor() === "agresivo" && entradaPlazoInversionValor() === "mediano") {
+  else if (perfil() === "agresivo" && plazo() === "mediano") {
     obtenerfondosAgresivoMayorIgual1AñoMenorIgual3Años();
   }
-  else if (entradaPerfilUsuarioValor() === "agresivo" && entradaPlazoInversionValor() === "largo") {
+  else if (perfil() === "agresivo" && plazo() === "largo") {
     obtenerfondosAgresivoMayorIgual3Años();
   }
   else {
