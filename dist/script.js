@@ -2,31 +2,8 @@
 const perfiles = document.querySelectorAll('.perfil');
 const plazos = document.querySelectorAll('.plazo');
 const btnBuscar = $('#btnBuscar');
-
-// Obteniendo datos desde el archivo "datosIniciales.json"
-const URLJSON = "./datosIniciales.json";
-
-// Función que obtiene y crea datos de inicio usando AJAX y Jquery
-function datosIniciales() {
-  $.get(URLJSON, function (respuesta, estado) {
-    if (estado === "success") {
-      let datosIniciales = respuesta;
-      for (const dato of datosIniciales) {
-        $("#contenedorFondos").append(`<div class="fondo">${dato.nombre}</div>`);
-      }
-    }
-  })
-}
-
-// Funciones para incorporar animación al título
-function animarTitulo () {
-  $('#fondos_title').fadeIn()
-}
-
-function ocultarTitulo () {
-  $('#fondos_title').fadeOut();
-}
-
+const perfilLocal = localStorage.getItem('perfil');
+const plazoLocal = localStorage.getItem('plazo');
 
 // Función constructora de objetos
 function FondoModelo (id, nombre, moneda, perfil, plazoRecomendado) {
@@ -106,23 +83,16 @@ let plazo = function () {
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
 const obtenerLocal = (clave) => { localStorage.getItem(clave) };
 
-function guardarPerfilPlazo() {
+function guardarPreferencias() {
   guardarLocal('perfil', perfil());
   guardarLocal('plazo', plazo());
 }
 
-const perfilRecuperado = localStorage.getItem('perfil');
-const plazoRecuperado = localStorage.getItem('plazo');
-
-console.log(typeof plazoRecuperado)
-
-
-// console.log(perfil1, plazo1);
 
 // Funciones que se activan al dar click al botón buscar
 btnBuscar.click(ocultarTitulo);
 btnBuscar.click(animarTitulo);
-btnBuscar.click(guardarPerfilPlazo);
+btnBuscar.click(guardarPreferencias);
 btnBuscar.click(() => {
   buscarFondo(perfil(), plazo());
 });
@@ -130,8 +100,9 @@ btnBuscar.click(() => {
 // Funciones que se activan al recargar la página
 $('document').ready(animarTitulo);
 $('document').ready(() => {
-  buscarFondo(perfilRecuperado, plazoRecuperado);
+  buscarFondo(perfilLocal, plazoLocal);
 });
+$('document').ready(recuperarCheck(perfilLocal, plazoLocal));
 
 
 
@@ -375,6 +346,29 @@ function buscarFondo(perfilU, plazoU) {
   }
 }
 
+// Función para recuperar el atributo check
+function recuperarCheck (perfilRecu, plazoRecu) {
+  perfiles.forEach(perfil => {
+    if (perfil.value === perfilRecu) {
+      perfil.setAttribute("checked", "");
+    }
+  })
+
+  plazos.forEach(plazo => {
+    if (plazo.value === plazoRecu) {
+      plazo.setAttribute("checked", "");
+    }
+  })
+}
+
+// Funciones para incorporar animación al título
+function animarTitulo () {
+  $('#fondos_title').fadeIn()
+}
+
+function ocultarTitulo () {
+  $('#fondos_title').fadeOut();
+}
 
 
 
