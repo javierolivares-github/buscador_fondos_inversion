@@ -24,7 +24,7 @@ $('document').ready(recuperarCheck(perfilLocal, plazoLocal));
 
 
 // FUNCIONES
-// Guardando la entrada del usuario proveniente de los input tipo radio
+// Guardando el perfil seleccionado
 let perfil = function () {
   let perfilUsuario;
 
@@ -37,7 +37,7 @@ let perfil = function () {
   return perfilUsuario;
 }
 
-// Guardando la entrada del usuario proveniente de los input tipo radio
+// Guardando el plazo seleccionado
 let plazo = function () {
   let plazoUsuario;
 
@@ -50,7 +50,7 @@ let plazo = function () {
   return plazoUsuario;
 }
 
-// GUARDAR EN LOCAL
+// Funciones para guardar y obtener de Local Storage
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
 const obtenerLocal = (clave) => { localStorage.getItem(clave) };
 
@@ -59,8 +59,7 @@ function guardarPreferencias() {
   guardarLocal('plazo', plazo());
 }
 
-
-// Función obtener los fondos con un perfil Conservador y un plazo menor o igual a 1 año
+// Función obtener fondos con un perfil Conservador y un plazo Corto
 function obtenerConservadorCorto() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -86,7 +85,7 @@ function obtenerConservadorCorto() {
   });
 }
 
-// Función obtener los fondos con un perfil Conservador y un plazo mayor a 1 año y menor a 3 años
+// Función obtener fondos con un perfil Conservador y un plazo mediano
 function obtenerConservadorMediano() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -112,8 +111,7 @@ function obtenerConservadorMediano() {
   });
 }
 
-
-// Función obtener los fondos con un perfil Conservador y un plazo mayor o igual a 3 años
+// Función obtener fondos con un perfil conservador y un plazo largo
 function obtenerConservadorLargo() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -139,8 +137,7 @@ function obtenerConservadorLargo() {
   });
 }
 
-
-// Función obtener los fondos con un perfil Moderado y un plazo Menor o Igual a 1 año
+// Función obtener fondos con un perfil moderado y un plazo corto
 function obtenerModeradoCorto() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -166,8 +163,7 @@ function obtenerModeradoCorto() {
   });
 }
 
-
-// Función obtener los fondos con un perfil Moderado y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
+// Función obtener fondos con un perfil moderado y un plazo mediano
 function obtenerModeradoMediano() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -193,8 +189,7 @@ function obtenerModeradoMediano() {
   });
 }
 
-
-// Función obtener los fondos con un perfil Moderado y un plazo mayor o igual a 3 años
+// Función obtener fondos con un perfil moderado y un plazo largo
 function obtenerModeradoLargo() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -220,8 +215,7 @@ function obtenerModeradoLargo() {
   });
 }
 
-
-// Función obtener los fondos con un perfil Agresivo y un plazo Menor o Igual a 1 año
+// Función obtener fondos con un perfil agresivo y un plazo corto
 function obtenerAgresivoCorto() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -247,8 +241,7 @@ function obtenerAgresivoCorto() {
   });
 }
 
-
-// Función obtener los fondos con un perfil Agresivo y un plazo Mayor o Igual a 1 año y Menor o Igual a 3 años
+// Función obtener fondos con un perfil agresivo y un plazo mediano
 function obtenerAgresivoMediano() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -275,7 +268,7 @@ function obtenerAgresivoMediano() {
 }
 
 
-// Función obtener los fondos con un perfil Moderado y un plazo mayor o igual a 3 años
+// Función obtener fondos con un perfil agresivo y plazo largo
 function obtenerAgresivoLargo() {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado === "success") {
@@ -301,8 +294,7 @@ function obtenerAgresivoLargo() {
   });
 }
 
-
-// Función obtener un mensaje de fallo
+// Función obtener un mensaje de error
 function mensajeError() {
   // Creando un mensaje de fallo para el usuario
   let mensajeError = `
@@ -313,7 +305,7 @@ function mensajeError() {
 }
 
 
-// Función obtener los fondos segun la combinación elegida por el usuario.
+// Función obtener fondos segun combinación elegida por el cliente
 function buscarFondo(perfilU, plazoU) {
   if (perfilU === "conservador" && plazoU === "corto") {
     obtenerConservadorCorto();
@@ -347,7 +339,7 @@ function buscarFondo(perfilU, plazoU) {
   }
 }
 
-// Función para recuperar el check
+// Función recuperar atributo checked
 function recuperarCheck (perfilRecu, plazoRecu) {
   perfiles.forEach(perfil => {
     if (perfil.value === perfilRecu) {
@@ -362,7 +354,7 @@ function recuperarCheck (perfilRecu, plazoRecu) {
   })
 }
 
-// Funciones para incorporar animación al título
+// Funcion incorporar animación al título
 function animarTitulo () {
   $('#fondos_title').fadeIn()
 }
