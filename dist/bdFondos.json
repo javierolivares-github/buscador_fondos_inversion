@@ -1,0 +1,170 @@
+[
+  {
+     "id":1,
+     "nombre":"LarrainVial Cash",
+     "moneda":"Pesos",
+     "perfil":"Conservador",
+     "plazoRecomendado":1
+  },
+  {
+     "id":2,
+     "nombre":"LarrainVial Ahorro Dolar",
+     "moneda":"Dolar",
+     "perfil":"Moderado",
+     "plazoRecomendado":90
+  },
+  {
+     "id":3,
+     "nombre":"LarrainVial Ahorro Plazo",
+     "moneda":"Pesos",
+     "perfil":"Conservador",
+     "plazoRecomendado":30
+  },
+  {
+     "id":4,
+     "nombre":"LarrainVial Ahorro Capital",
+     "moneda":"Pesos",
+     "perfil":"Conservador",
+     "plazoRecomendado":90
+  },
+  {
+     "id":5,
+     "nombre":"LarrainVial Ahorro Corporativo",
+     "moneda":"Pesos",
+     "perfil":"Moderado",
+     "plazoRecomendado":365
+  },
+  {
+     "id":6,
+     "nombre":"LarrainVial Ahorro Estrategico",
+     "moneda":"Pesos",
+     "perfil":"Conservador",
+     "plazoRecomendado":365
+  },
+  {
+     "id":7,
+     "nombre":"LarrainVial Ahorro Dinamico",
+     "moneda":"Pesos",
+     "perfil":"Moderado",
+     "plazoRecomendado":365
+  },
+  {
+     "id":8,
+     "nombre":"LarrainVial Defensiva Dolar",
+     "moneda":"Dolar",
+     "perfil":"Moderado",
+     "plazoRecomendado":365
+  },
+  {
+     "id":9,
+     "nombre":"LarrainVial Bonos Latam",
+     "moneda":"Dolar",
+     "perfil":"Moderado",
+     "plazoRecomendado":365
+  },
+  {
+     "id":10,
+     "nombre":"LarrainVial Balanceado Conservador",
+     "moneda":"Pesos",
+     "perfil":"Conservador",
+     "plazoRecomendado":1095
+  },
+  {
+     "id":11,
+     "nombre":"LarrainVial Balanceado Moderado",
+     "moneda":"Pesos",
+     "perfil":"Moderado",
+     "plazoRecomendado":365
+  },
+  {
+     "id":12,
+     "nombre":"LarrainVial Balanceado Crecimiento",
+     "moneda":"Pesos",
+     "perfil":"Agresivo",
+     "plazoRecomendado":365
+  },
+  {
+     "id":13,
+     "nombre":"LarrainVial Dinamico Agresivo",
+     "moneda":"Pesos",
+     "perfil":"Agresivo",
+     "plazoRecomendado":1095
+  },
+  {
+     "id":14,
+     "nombre":"LarrainVial Dinamico Balanceado",
+     "moneda":"Pesos",
+     "perfil":"Moderado",
+     "plazoRecomendado":1095
+  },
+  {
+     "id":15,
+     "nombre":"LarrainVial Dinamico Conservador",
+     "moneda":"Pesos",
+     "perfil":"Conservador",
+     "plazoRecomendado":180
+  },
+  {
+     "id":16,
+     "nombre":"LarrainVial Dinamico Crecimiento",
+     "moneda":"Pesos",
+     "perfil":"Agresivo",
+     "plazoRecomendado":730
+  },
+  {
+     "id":17,
+     "nombre":"LarrainVial Dinamico Moderado",
+     "moneda":"Pesos",
+     "perfil":"Moderado",
+     "plazoRecomendado":270
+  },
+  {
+     "id":18,
+     "nombre":"LarrainVial Portafolio Lider",
+     "moneda":"Pesos",
+     "perfil":"Moderado",
+     "plazoRecomendado":365
+  },
+  {
+     "id":19,
+     "nombre":"LarrainVial Protección",
+     "moneda":"Pesos",
+     "perfil":"Moderado",
+     "plazoRecomendado":365
+  },
+  {
+     "id":20,
+     "nombre":"LarrainVial Estados Unidos",
+     "moneda":"Dolar",
+     "perfil":"Agresivo",
+     "plazoRecomendado":730
+  },
+  {
+     "id":21,
+     "nombre":"LarrainVial Europa",
+     "moneda":"Dolar",
+     "perfil":"Agresivo",
+     "plazoRecomendado":1095
+  },
+  {
+     "id":22,
+     "nombre":"LarrainVial Asia",
+     "moneda":"Dolar",
+     "perfil":"Agresivo",
+     "plazoRecomendado":730
+  },
+  {
+     "id":23,
+     "nombre":"LarrainVial Latinoamericano",
+     "moneda":"Dolar",
+     "perfil":"Agresivo",
+     "plazoRecomendado":1095
+  },
+  {
+     "id":24,
+     "nombre":"LarrainVial Enfoque",
+     "moneda":"Pesos",
+     "perfil":"Agresivo",
+     "plazoRecomendado":730
+  }
+]
