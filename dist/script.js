@@ -296,13 +296,13 @@ function obtenerAgresivoLargo() {
 }
 
 // Función obtener un mensaje de error
-function mensajeError() {
+function mensajeInstruccion() {
   // Creando un mensaje de fallo para el usuario
-  let mensajeError = `
-    <p style="color:red;">Lo sentimos no hay fondos para esta combinación. Prueba con una combinación diferente.</p>
+  let mensajeInstruccion = `
+    <p style="color:green;">Selecciona tu perfil y el plazo de tu inversión, luego pulsa el botón buscar.</p>
   `
   // Creando una salida en pantalla
-  document.getElementById('contenedorFondos').innerHTML = mensajeError;
+  document.getElementById('contenedorFondos').innerHTML = mensajeInstruccion;
 }
 
 
@@ -336,7 +336,7 @@ function buscarFondo(perfilU, plazoU) {
     obtenerAgresivoLargo();
   }
   else {
-    mensajeError();
+    mensajeInstruccion();
   }
 }
 
