@@ -1,4 +1,5 @@
 // VARIABLES
+// Obtener elementos y datos
 const perfiles = document.querySelectorAll('.perfil');
 const plazos = document.querySelectorAll('.plazo');
 const btnBuscar = $('#btnBuscar');
@@ -6,7 +7,7 @@ const URLJSON = "./bdFondos.json";
 const perfilLocal = localStorage.getItem('perfil');
 const plazoLocal = localStorage.getItem('plazo');
 
-
+// EVENTOS
 // Funciones que se activan al dar click al botón buscar
 btnBuscar.click(ocultarTitulo);
 btnBuscar.click(animarTitulo);
